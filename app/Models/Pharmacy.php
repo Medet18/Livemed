@@ -12,16 +12,14 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 /**
  * @method static create(array|string[] $array_merge)
  */
-class User extends Authenticatable implements JWTSubject
+class Pharmacy extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
-        'name',
-        'lastname',
-        'phone',
-        'date_of_birth',
-        'IIN',
+        'pharmacy_name',
+        'pharmacy_phone',
+        'pharmacy_address',
         'email',
         'password',
     ];

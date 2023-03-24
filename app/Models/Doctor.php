@@ -12,7 +12,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 /**
  * @method static create(array|string[] $array_merge)
  */
-class User extends Authenticatable implements JWTSubject
+class Doctor extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -20,7 +20,8 @@ class User extends Authenticatable implements JWTSubject
         'name',
         'lastname',
         'phone',
-        'date_of_birth',
+        'organization',
+        'specialization',
         'IIN',
         'email',
         'password',

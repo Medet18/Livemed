@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'user'], function ($router) {
+    Route::post('/login', [UserController::class, 'login']);
+    Route::post('/register', [UserController::class, 'register']);
 });
+
+Route::group(['middleware' => ['auth:user-api', 'jwt.auth'], 'prefix' => 'user'], function ($router) {
+    Route::post('/logout', [UserController::class, 'logout']);
+    Route::get('/profile', [UserController::class, 'userProfile']);
+    Route::post('/refresh', [UserController::class, 'refresh']);
+});
+
+Route::group(['prefix' => 'doctor'], function ($router) {
+    Route::post('/login', [UserController::class, 'login']);
+    Route::post('/register', [UserController::class, 'register']);
+});
+
+Route::group(['middleware' => ['auth:doctor-api', 'jwt.auth'], 'prefix' => 'doctor'], function ($router) {
+    Route::post('/logout', [UserController::class, 'logout']);
+    Route::get('/profile', [UserController::class, 'userProfile']);
+    Route::post('/refresh', [UserController::class, 'refresh']);
+});
+

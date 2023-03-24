@@ -11,20 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('pharmacies', function (Blueprint $table) {
             $table->id();
-            $table->string('role_type')->default('user');
-            $table->string('name');
-            $table->string('lastname');
-            $table->bigInteger('phone')->unique();
-            $table->date('date_of_birth');
-            $table->string('IIN')->unique();
+            $table->string('role_type')->default('pharmacy');
+            $table->string('pharmacy_name');
+            $table->bigInteger('pharmacy_phone')->unique();
+            $table->string('pharmacy_address');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('address')->default('Almaty');
-            $table->string('contradictions')->nullable();
-            $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -35,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('pharmacies');
     }
 };

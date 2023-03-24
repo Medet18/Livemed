@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'users_p',
     ],
 
     /*
@@ -39,6 +39,21 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'user-api'=> [
+            'driver' => 'jwt',
+            'provider' => 'users',
+            'hash' => false,
+        ],
+        'doctor-api' => [
+            'driver' => 'jwt',
+            'provider' => 'doctor',
+            'hash' => false,
+        ],
+        'pharmacy-api' => [
+            'driver' => 'jwt',
+            'provider' => 'pharmacy',
+            'hash' => false,
         ],
     ],
 
@@ -64,7 +79,14 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
+        'doctor' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Doctor::class,
+        ],
+        'pharmacy' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Pharmacy::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -91,9 +113,21 @@ return [
     */
 
     'passwords' => [
-        'users' => [
+        'users_p' => [
             'provider' => 'users',
             'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'doctors_p' => [
+            'provider' => 'doctors',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'pharmacies_p' => [
+            'provider' => 'pharmacies',
+            'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
         ],
