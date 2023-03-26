@@ -61,7 +61,7 @@ class DoctorController extends Controller
         return $this->createNewToken($token);
     }
 
-    public function userProfile(): \Illuminate\Http\JsonResponse
+    public function doctorProfile(): \Illuminate\Http\JsonResponse
     {
         return response()->json(auth('doctor-api')->user());
     }
