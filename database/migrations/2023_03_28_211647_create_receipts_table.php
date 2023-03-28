@@ -23,7 +23,7 @@ return new class extends Migration
             $table->unsignedBigInteger('receipt_user_id');
             $table->foreign('receipt_user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->unsignedBigInteger('receipt_status_id');
+            $table->unsignedBigInteger('receipt_status_id')->comment('1-New,2-Accepted.3-Process');
             $table->foreign('receipt_status_id')->references('id')->on('statuses')->onDelete('cascade');
 
             $table->unsignedBigInteger('receipt_medicine_rec_id');
