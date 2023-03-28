@@ -13,13 +13,9 @@ return new class extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
-            $table->string('role_type')->default('doctor');
-            $table->string('name');
-            $table->string('lastname');
-            $table->bigInteger('phone')->unique();
-            $table->string('organization');
-            $table->string('specialization');
-            $table->string('IIN')->unique();
+            $table->string('doctor_name');
+            $table->bigInteger('doctor_phone')->unique();
+            $table->string('doctor_specialist');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

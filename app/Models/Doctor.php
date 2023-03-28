@@ -17,12 +17,9 @@ class Doctor extends Authenticatable implements JWTSubject
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
-        'name',
-        'lastname',
-        'phone',
-        'organization',
-        'specialization',
-        'IIN',
+        'doctor_name',
+        'doctor_phone',
+        'doctor_specialist',
         'email',
         'password',
     ];

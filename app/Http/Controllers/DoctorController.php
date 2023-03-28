@@ -17,12 +17,9 @@ class DoctorController extends Controller
     public function register(Request $request): \Illuminate\Http\JsonResponse
     {
         $validator = Validator::make($request->all(),[
-            'name'=>'required|string|between:1,100',
-            'lastname'=> 'required|string|between:1,100',
-            'phone' => 'required|numeric|digits:11',
-            'organization'=>'required|string|between:1,100',
-            'specialization'=>'required|string|between:1,100',
-            'IIN' =>'required|string|size:12',
+            'doctor_name'=>'required|string|between:1,100',
+            'doctor_phone' => 'required|numeric|digits:11',
+            'doctor_specialist'=>'required|string|between:1,100',
             'email'=>'required|string|email|max:100|unique:doctors',
             'password'=>'required|string|confirmed|min:6',
         ]);

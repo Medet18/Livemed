@@ -32,7 +32,7 @@ Route::group(['middleware' => ['auth:user-api', 'jwt.auth'], 'prefix' => 'user']
 /********* Route for Doctors ********/
 Route::group(['prefix' => 'doctor'], function ($router) {
     Route::post('/login', [DoctorController::class, 'login']);
-//    Route::post('/register', [DoctorController::class, 'register']);
+    Route::post('/register', [DoctorController::class, 'register']);
 });
 
 Route::group(['middleware' => ['auth:doctor-api', 'jwt.auth'], 'prefix' => 'doctor'], function ($router) {

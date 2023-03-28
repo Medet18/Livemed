@@ -16,9 +16,8 @@ class UserController extends Controller
     public function register(Request $request): \Illuminate\Http\JsonResponse
     {
         $validator = Validator::make($request->all(),[
-            'name'=>'required|string|between:1,100',
-            'lastname'=> 'required|string|between:1,100',
-            'phone' => 'required|numeric|digits:11',
+            'full_name'=>'required|string|between:1,100',
+            'user_phone' => 'required|numeric|digits:11',
             'date_of_birth'=>'required|date',
             'IIN' =>'required|string|size:12',
             'email'=>'required|string|email|max:100|unique:users',

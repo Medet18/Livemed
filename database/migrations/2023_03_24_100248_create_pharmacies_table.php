@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('pharmacies', function (Blueprint $table) {
             $table->id();
-            $table->string('role_type')->default('pharmacy');
             $table->string('pharmacy_name');
             $table->bigInteger('pharmacy_phone')->unique();
             $table->string('pharmacy_address');
