@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('pharmacy_name');
             $table->bigInteger('pharmacy_phone')->unique();
-            $table->string('pharmacy_address');
+            $table->text('pharmacy_address');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

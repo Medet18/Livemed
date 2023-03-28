@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
+            $table->text('appointment_reason');
+            $table->date('appointment_date');
+            $table->bigInteger('appointment_number');
+
+            $table->unsignedBigInteger('appointment_doctor_id');
+            $table->foreign('appointment_doctor_id')->references('id')->on('doctors')->onDelete('cascade');
+
+            $table->unsignedBigInteger('appointment_user_id');
+            $table->foreign('appointment_user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

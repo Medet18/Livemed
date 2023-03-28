@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigInteger('user_phone')->unique();
             $table->date('date_of_birth');
             $table->string('IIN')->unique();
-            $table->string('address')->default('Almaty');
+            $table->text('address')->default('Almaty');
             $table->string('avatar')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
