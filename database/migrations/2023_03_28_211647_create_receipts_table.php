@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text('receipt_title');
             $table->text('receipt_comments');
             $table->date('receipt_date');
+            $table->string('status')->comment('1-new, 2-accepted, 3-rejjected');
 
             $table->unsignedBigInteger('receipt_doctor_id');
             $table->foreign('receipt_doctor_id')->references('id')->on('doctors')->onDelete('cascade');
@@ -23,11 +24,11 @@ return new class extends Migration
             $table->unsignedBigInteger('receipt_user_id');
             $table->foreign('receipt_user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->unsignedBigInteger('receipt_status_id')->comment('1-New,2-Accepted.3-Process');
-            $table->foreign('receipt_status_id')->references('id')->on('statuses')->onDelete('cascade');
+//            $table->unsignedBigInteger('receipt_status_id');
+//            $table->foreign('receipt_status_id')->references('id')->on('statuses')->onDelete('cascade');
 
-            $table->unsignedBigInteger('receipt_medicine_rec_id');
-            $table->foreign('receipt_medicine_rec_id')->references('id')->on('medicine_receipts')->onDelete('cascade');
+//            $table->unsignedBigInteger('receipt_medicine_rec_id');
+//            $table->foreign('receipt_medicine_rec_id')->references('id')->on('medicine_receipts')->onDelete('cascade');
 
             $table->timestamps();
         });
