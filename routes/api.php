@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PharmacyController;
+use App\Http\Controllers\MedicinesController;
+use App\Http\Controllers\MainPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,12 @@ Route::group(['middleware' => ['auth:user-api', 'jwt.auth'], 'prefix' => 'user']
     Route::post('/logout', [UserController::class, 'logout']);
     Route::get('/profile', [UserController::class, 'userProfile']);
     Route::post('/refresh', [UserController::class, 'refresh']);
+
+    Route::group(['prefix' => 'show/'], function (){
+        Route::get('medicines', [MedicinesController::class, 'index']);
+        Route::get('pharmacies', [MainPageController::class, 'index']);
+
+    });
 });
 
 
@@ -52,5 +60,10 @@ Route::group(['middleware' => ['auth:pharmacy-api', 'jwt.auth'], 'prefix' => 'ph
     Route::post('/logout', [PharmacyController::class, 'logout']);
     Route::get('/profile', [PharmacyController::class, 'pharmacyProfile']);
     Route::post('/refresh', [PharmacyController::class, 'refresh']);
+
+    Route::group(['prefix'=>'show/medicines'], function () {
+        Route::get('index', [MedicinesController::class, 'index']);
+        Route::post('store', [MedicinesController::class , 'store']);
+    });
 });
 

@@ -10,6 +10,12 @@ use Illuminate\Support\Str;
 
 class MedicinesController extends Controller
 {
+
+    public function index(): \Illuminate\Http\JsonResponse
+    {
+        $news = Medicines::all();
+        return response()->json(['Medicines'=>$news], 200);
+    }
     public function store(Request $request): \Illuminate\Http\JsonResponse
     {
         try{
@@ -27,8 +33,8 @@ class MedicinesController extends Controller
              return response()->json(['Message'=>'News successfully stored!'], 200);
 
         } catch(\Exception $e){
-            return response()->json(['Message' => 'Something went wrong!'],500);//'Something went wrong!'], 500);
-            //return response()->json(['Exception' => $e], 500);
+//            return response()->json(['Message' => 'Something went wrong!'],500);//'Something went wrong!'], 500);
+            return response()->json(['Exception' => $e], 500);
         }
     }
 }
