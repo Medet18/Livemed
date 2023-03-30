@@ -72,7 +72,7 @@
 
         <div class="box-container">
 
-            <a href="client/receipts.htm">
+            <a href="{{asset('client/receipts.htm')}}">
                 <div class="box">
                     <i class="fas fa-scroll" style="background: #ffe0dc; color: #009379;"></i>
                     <h3>Мои рецепты</h3>
