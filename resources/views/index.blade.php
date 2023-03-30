@@ -80,7 +80,7 @@
                 </div>
             </a>
 
-            <a href="client/purchase.htm">
+            <a href="{{asset('client/purchase.htm')}}">
                 <div class="box">
                     <i class="fas fa-align-center" style="background: #cce9e4; color: #009379;"></i>
                     <h3>История покупок</h3>
@@ -88,7 +88,7 @@
                 </div>
             </a>
 
-            <a href="client/medicines.htm">
+            <a href="{{asset('client/medicines.htm')}}}">
                 <div class="box">
                     <i class="fas fa-shopping-bag" style="background: #fef7e5; color: #009379;"></i>
 
@@ -97,7 +97,7 @@
                 </div>
             </a>
 
-            <a href="client/pharmacies.htm">
+            <a href="{{asset('client/pharmacies.htm')}}}">
                 <div class="box">
                     <i class="fas fa-globe-americas" style="background: #ffe0dc; color: #009379;"></i>
                     <h3>Список аптек</h3>
@@ -105,7 +105,7 @@
                 </div>
             </a>
 
-            <a href="client/profile.htm">
+            <a href="{{asset('client/profile.htm')}}">
                 <div class="box">
                     <i class="fas fa-user" style="background: #cce9e4; color: #009379;"></i>
                     <h3>Личные данные</h3>
@@ -113,7 +113,7 @@
                 </div>
             </a>
 
-            <a href="client/contact.htm">
+            <a href="{{asset('client/contact.htm')}}}">
                 <div class="box">
                     <i class="fas fa-phone" style="background: #fef7e5; color: #009379;"></i>
                     <h3>Поддержка</h3>
@@ -155,7 +155,7 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="js/index.js"></script>
-<script src="js/logo.js"></script>
+<script src="{{asset('js/index.js')}}"></script>
+<script src="{{asset('js/logo.js')}}"></script>
 </body>
 </html>

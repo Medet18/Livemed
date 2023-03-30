@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="{{asset('css/index.css')}}">
+    <link rel="stylesheet" href="{{asset('css/login.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
@@ -29,7 +29,7 @@
             <button class="button" type="button" id="price-action">Login</button>
             <button class="button" type="button" id="" onclick="window.location.href='register.htm'">Register</button>
         </form>
-        <img src="photo/iphone2.png" alt="Rolls" class="login-image">
+        <img src="{{asset('photo/iphone2.png')}}" alt="Rolls" class="login-image">
     </div>
 </section>
 
@@ -66,6 +66,6 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="js/logo.js"></script>
+<script src="{{asset('js/logo.js')}}"></script>
 </body>
 </html>
