@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 //use App\Http\Requests\NewsStoreReq;
 use App\Models\Receipt;
 use Carbon\Carbon;
-use http\Env\Request;
+//use http\Env\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
