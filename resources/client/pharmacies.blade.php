@@ -5,23 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/pharmacies.css">
+    <link rel="stylesheet" href="{{asset('../css/index.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/pharmacies.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
 
 </head>
+<body>
 <header class="header">
     <div class="container">
         <div class="logo">
-            <a href="#" id="logo" class="logo" onclick="window.location.href='../index.html'"> <span>Live</span>MedKZ </a>
+            <a href="#" id="logo" class="logo" onclick="window.location.href='{{asset('../index.blade.php')}}'"> <span>Live</span>MedKZ </a>
         </div>
 
         <nav class="menu">
             <ul>
                 <li class="menu-item">
-                    <a href="#" onclick="window.location.href='../index.html'">Главная</a>
+                    <a href="#" onclick="window.location.href='{{asset('../index.blade.php')}}'">Главная</a>
                 </li>
 
                 <li class="menu-item">
@@ -52,7 +53,7 @@
     <div class="container">
         <div class="title">
             <i class="fas fa-globe-americas"></i>
-            <a href="pharmacies.htm"><h2>The list of pharmacies</h2></a>
+            <a href="{{asset('pharmacies.blade.php')}}"><h2>The list of pharmacies</h2></a>
         </div>
     </div>
 </section>
@@ -61,42 +62,42 @@
     <div class="container">
         <div class="recepts-lists">
             <div class="left">
-                <h3><a href="pharmacy_page.blade.php">The pharmacy <span>№4</span></a></h3>
+                <h3><a href="{{asset('pharmacy_page.blade.php')}}">The pharmacy <span>№4</span></a></h3>
                 <h3>Almaty, Ayezova 101</h3>
             </div>
         </div>
 
         <div class="recepts-lists">
             <div class="left">
-                <h3><a href="pharmacy_page.blade.php">The pharmacy <span>№3</span></a></h3>
+                <h3><a href="{{asset('pharmacy_page.blade.php')}}">The pharmacy <span>№3</span></a></h3>
                 <h3>Almaty, Rozybakyeva 102</h3>
             </div>
         </div>
 
         <div class="recepts-lists">
             <div class="left">
-                <h3><a href="pharmacy_page.blade.php">The pharmacy <span>№2</span></a></h3>
+                <h3><a href="{{asset('pharmacy_page.blade.php')}}">The pharmacy <span>№2</span></a></h3>
                 <h3>Almaty, Baurzhan Momyshuly 120</h3>
             </div>
         </div>
 
         <div class="recepts-lists">
             <div class="left">
-                <h3><a href="pharmacy_page.blade.php">The pharmacy <span>№1</span></a></h3>
+                <h3><a href="{{asset('pharmacy_page.blade.php')}}">The pharmacy <span>№1</span></a></h3>
                 <h3>Almaty, Qaskelen 100</h3>
             </div>
         </div>
 
         <div class="recepts-lists">
             <div class="left">
-                <h3><a href="pharmacy_page.blade.php">The pharmacy <span>№9</span></a></h3>
+                <h3><a href="{{asset('pharmacy_page.blade.php')}}">The pharmacy <span>№9</span></a></h3>
                 <h3>Almaty, Baiqonyr 80</h3>
             </div>
         </div>
 
         <div class="recepts-lists">
             <div class="left">
-                <h3><a href="pharmacy_page.blade.php">The pharmacy <span>№8</span></a></h3>
+                <h3><a href="{{asset('pharmacy_page.blade.php')}}">The pharmacy <span>№8</span></a></h3>
                 <h3>Almaty, Tole biy 10</h3>
             </div>
         </div>
@@ -127,7 +128,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="../js/logo.js"></script>
+<script src="{{asset('../js/logo.js')}}"></script>
 
 </body>
 </html>

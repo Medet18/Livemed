@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="{{asset('../css/index.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/profile.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -17,13 +17,13 @@
 <header class="header">
     <div class="container">
         <div class="logo">
-            <a href="#" id="logo" class="logo" onclick="window.location.href='../index.html'"> <span>Live</span>MedKZ </a>
+            <a href="#" id="logo" class="logo" onclick="window.location.href='{{asset('../index.blade.php')}}'"> <span>Live</span>MedKZ </a>
         </div>
 
         <nav class="menu">
             <ul>
                 <li class="menu-item">
-                    <a href="#" onclick="window.location.href='../index.html'">Главная</a>
+                    <a href="#" onclick="window.location.href='{{asset('../index.blade.php')}}'">Главная</a>
                 </li>
 
                 <li class="menu-item">
@@ -54,7 +54,7 @@
     <div class="container">
         <div class="title">
             <i class="fas fa-user"></i>
-            <a href="profile.htm"><h2>User profile</h2></a>
+            <a href="{{asset('profile.blade.php')}}"><h2>User profile</h2></a>
         </div>
     </div>
 </section>
@@ -62,7 +62,7 @@
 <section class="recepts">
     <div class="container">
         <div class="pharm_img">
-            <img src="../photo/user.png" alt="UserImage">
+            <img src="{{asset('../photo/user.png')}}" alt="UserImage">
         </div>
         <div class="pharm_info">
             <h1>Name: Rashid</h1>
@@ -75,7 +75,7 @@
         <div class="back_fone_qr">
             <button class="button">Forgot password</button>
             <div class="pharm_qr">
-                <img src="../photo/qr_code.png" alt="QR">
+                <img src="{{asset('../photo/qr_code.png')}}" alt="QR">
             </div>
         </div>
     </div>
@@ -104,6 +104,6 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="../js/logo.js"></script>
+<script src="{{asset('../js/logo.js')}}"></script>
 </body>
 </html>

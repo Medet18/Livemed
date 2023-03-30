@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/medicines.css">
+    <link rel="stylesheet" href="{{asset('../css/index.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/medicines.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
@@ -16,13 +16,13 @@
 <header class="header">
     <div class="container">
         <div class="logo">
-            <a href="#" id="logo" class="logo" onclick="window.location.href='../index.html'"> <span>Live</span>MedKZ </a>
+            <a href="#" id="logo" class="logo" onclick="window.location.href='{{asset('../index.htm')}}'"> <span>Live</span>MedKZ </a>
         </div>
 
         <nav class="menu">
             <ul>
                 <li class="menu-item">
-                    <a href="#" onclick="window.location.href='../index.html'">Главная</a>
+                    <a href="#" onclick="window.location.href='{{asset('../index.htm')}}'">Главная</a>
                 </li>
 
                 <li class="menu-item">
@@ -53,7 +53,7 @@
     <div class="container">
         <div class="title">
             <i class="fas fa-shopping-bag"></i>
-            <a href="medicines.htm"><h2>A list of medicines</h2></a></div>
+            <a href="{{asset('medicines.htm')}}"><h2>A list of medicines</h2></a></div>
     </div>
 </section>
 
@@ -121,5 +121,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="../js/logo.js"></script></body></body>
+<script src="{{asset('../js/logo.js')}}"></script>
+
+</body>
 </html>
