@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
 
-    <link rel="stylesheet" href="../css/search.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="{{asset('../css/search.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/index.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
@@ -17,11 +17,11 @@
 <header class="header">
     <div class="container">
         <div class="logo">
-            <a href="#" id="logo" class="logo" onclick="window.location.reload()"> <span>Live</span>MedKZ </a>
+            <a href="#" id="logo" class="logo" onclick="window.location.href='{{asset('search.htm')}}'"> <span>Live</span>MedKZ </a>
         </div>
 
         <div class="login-btn">
-            <button class="button" onclick="window.location.href='loginDoctor.htm'">login</button>
+            <button class="button" onclick="window.location.href='{{asset('loginDoctor.htm')}}'">login</button>
         </div>
 
 
@@ -99,6 +99,6 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="../js/logo.js"></script>
+<script src="{{asset('../js/logo.js')}}"></script>
 </body>
 </html>
