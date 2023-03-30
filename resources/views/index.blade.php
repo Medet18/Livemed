@@ -15,7 +15,7 @@
 <header class="header">
     <div class="container">
         <div class="logo">
-            <a href="#" id="logo" class="logo" onclick="window.location.reload()"> <span>Live</span>MedKZ </a>
+            <a href="#" id="logo" class="logo" onclick="window.location.href='{{asset('index.htm')}}'"> <span>Live</span>MedKZ </a>
         </div>
 
         <nav class="menu">
@@ -41,7 +41,7 @@
         <!--            <button class="btn">City</button>-->
         <!--        </div>-->
         <div class="login-btn">
-            <button class="button" onclick="window.location.href='login.htm'">login</button>
+            <button class="button" onclick="window.location.href='{{asset('login.htm')}}'">login</button>
         </div>
 
 

@@ -16,7 +16,7 @@
 <header class="header">
     <div class="container">
         <div class="logo">
-            <a href="#" id="logo" class="logo" onclick="window.location.href='index.html'"> <span>Live</span>MedKZ </a>
+            <a href="#" id="logo" class="logo" onclick="window.location.href='{{asset('index.html')}}'"> <span>Live</span>MedKZ </a>
         </div>
     </div>
 </header>
@@ -27,7 +27,7 @@
             <input type="email" class="login-input" id="email" placeholder="Ваше email" required />
             <input type="password" class="login-input" id="password" placeholder="Ваш password" required />
             <button class="button" type="button" id="price-action">Login</button>
-            <button class="button" type="button" id="" onclick="window.location.href='register.htm'">Register</button>
+            <button class="button" type="button" id="" onclick="window.location.href='{{asset('register.htm')}}'">Register</button>
         </form>
         <img src="{{asset('photo/iphone2.png')}}" alt="Rolls" class="login-image">
     </div>
