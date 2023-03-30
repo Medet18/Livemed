@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\UserFolder;
 
-
-use App\Models\Pharmacy;
+use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
-class PharmacyController extends Controller
+class UserController extends Controller
 {
 
     /**
@@ -17,10 +17,11 @@ class PharmacyController extends Controller
     public function register(Request $request): \Illuminate\Http\JsonResponse
     {
         $validator = Validator::make($request->all(),[
-            'pharmacy_name'=>'required|string|between:1,100',
-            'pharmacy_phone' => 'required|numeric|digits:11',
-            'pharmacy_address'=>'required|string|between:1,200',
-            'email'=>'required|string|email|max:100|unique:pharmacies',
+            'full_name'=>'required|string|between:1,100',
+            'user_phone' => 'required|numeric|digits:11',
+            'date_of_birth'=>'required|date',
+            'IIN' =>'required|string|size:12',
+            'email'=>'required|string|email|max:100|unique:users',
             'password'=>'required|string|confirmed|min:6',
         ]);
 
@@ -28,14 +29,14 @@ class PharmacyController extends Controller
             return response()->json($validator->errors()->toJson(), 400);
         }
 
-        $pharmacy = Pharmacy::create(array_merge(
+        $user = User::create(array_merge(
             $validator->validated(),
             ['password' => bcrypt($request->password)]
         ));
 
         return response()->json([
-            'message' =>  'Pharmacy successfully registered!',
-            'Pharmacy' => $pharmacy
+            'message' =>  'User successfully registered!',
+            'User' => $user
         ],201);
 
     }
@@ -46,33 +47,33 @@ class PharmacyController extends Controller
     public function login(Request $request): \Illuminate\Http\JsonResponse
     {
         $validator =  Validator::make($request->all(),[
-            'email'=>'required|max:100|exists:pharmacies,email',
+            'email'=>'required|max:100|exists:users,email',
             'password'=>['required','string','min:6'],
         ]);
         if($validator->fails()){
             return response()->json($validator->errors(), 422);
         }
-        if(! $token = auth('pharmacy-api')->attempt($validator->validated())){
+        if(! $token = auth('user-api')->attempt($validator->validated())){
             return response()->json(['error' =>  'unauthorized'], 401);
         }
         return $this->createNewToken($token);
     }
 
-    public function pharmacyProfile(): \Illuminate\Http\JsonResponse
+    public function userProfile(): \Illuminate\Http\JsonResponse
     {
-        return response()->json(auth('pharmacy-api')->user());
+        return response()->json(auth('user-api')->user());
     }
 
     public function logout(): \Illuminate\Http\JsonResponse
     {
-        auth('pharmacy-api')->logout();
-        return response()->json(['message' => 'Pharmacy successfully logged out!']);
+        auth('user-api')->logout();
+        return response()->json(['message' => 'User successfully logged out!']);
     }
 
 
     public function refresh(): \Illuminate\Http\JsonResponse
     {
-        return $this->createNewToken(auth('pharmacy-api')->refresh());
+        return $this->createNewToken(auth('user-api')->refresh());
     }
 
     public function createNewToken($token): \Illuminate\Http\JsonResponse
@@ -81,7 +82,7 @@ class PharmacyController extends Controller
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => strtotime(date('Y-m-d H:i:s', strtotime("+60 min"))),
-            'Pharmacy' => auth('pharmacy-api')->user()
+            'User' => auth('user-api')->user()
         ]);
     }
 }

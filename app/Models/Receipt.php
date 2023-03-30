@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Receipt extends Model
 {
     use HasFactory;
-    protected $fillable = ['*'];
+    protected $fillable = [
+        'receipt_tile',
+        'receipt_comments',
+        'receipt_date',
+        'receipt_doctor_id',
+        'receipt_user_id'
+    ];
 
 }

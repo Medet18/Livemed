@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\DoctorFolder;
 
-use App\Models\User;
+
+use App\Http\Controllers\Controller;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
-class UserController extends Controller
+class DoctorController extends Controller
 {
 
     /**
@@ -16,11 +18,10 @@ class UserController extends Controller
     public function register(Request $request): \Illuminate\Http\JsonResponse
     {
         $validator = Validator::make($request->all(),[
-            'full_name'=>'required|string|between:1,100',
-            'user_phone' => 'required|numeric|digits:11',
-            'date_of_birth'=>'required|date',
-            'IIN' =>'required|string|size:12',
-            'email'=>'required|string|email|max:100|unique:users',
+            'doctor_name'=>'required|string|between:1,100',
+            'doctor_phone' => 'required|numeric|digits:11',
+            'doctor_specialist'=>'required|string|between:1,100',
+            'email'=>'required|string|email|max:100|unique:doctors',
             'password'=>'required|string|confirmed|min:6',
         ]);
 
@@ -28,14 +29,14 @@ class UserController extends Controller
             return response()->json($validator->errors()->toJson(), 400);
         }
 
-        $user = User::create(array_merge(
+        $doctor = Doctor::create(array_merge(
             $validator->validated(),
             ['password' => bcrypt($request->password)]
         ));
 
         return response()->json([
-            'message' =>  'User successfully registered!',
-            'User' => $user
+            'message' =>  'Doctor successfully registered!',
+            'Doctor' => $doctor
         ],201);
 
     }
@@ -46,33 +47,33 @@ class UserController extends Controller
     public function login(Request $request): \Illuminate\Http\JsonResponse
     {
         $validator =  Validator::make($request->all(),[
-            'email'=>'required|max:100|exists:users,email',
+            'email'=>'required|max:100|exists:doctors,email',
             'password'=>['required','string','min:6'],
         ]);
         if($validator->fails()){
             return response()->json($validator->errors(), 422);
         }
-        if(! $token = auth('user-api')->attempt($validator->validated())){
+        if(! $token = auth('doctor-api')->attempt($validator->validated())){
             return response()->json(['error' =>  'unauthorized'], 401);
         }
         return $this->createNewToken($token);
     }
 
-    public function userProfile(): \Illuminate\Http\JsonResponse
+    public function doctorProfile(): \Illuminate\Http\JsonResponse
     {
-        return response()->json(auth('user-api')->user());
+        return response()->json(auth('doctor-api')->user());
     }
 
     public function logout(): \Illuminate\Http\JsonResponse
     {
-        auth('user-api')->logout();
-        return response()->json(['message' => 'User successfully logged out!']);
+        auth('doctor-api')->logout();
+        return response()->json(['message' => 'Doctor successfully logged out!']);
     }
 
 
     public function refresh(): \Illuminate\Http\JsonResponse
     {
-        return $this->createNewToken(auth('user-api')->refresh());
+        return $this->createNewToken(auth('doctor-api')->refresh());
     }
 
     public function createNewToken($token): \Illuminate\Http\JsonResponse
@@ -81,7 +82,7 @@ class UserController extends Controller
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => strtotime(date('Y-m-d H:i:s', strtotime("+60 min"))),
-            'User' => auth('user-api')->user()
+            'Doctor' => auth('doctor-api')->user()
         ]);
     }
 }

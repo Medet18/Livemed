@@ -1,12 +1,11 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\DoctorFolder\DoctorController;
+use App\Http\Controllers\Pharmacy\MedicinesController;
+use App\Http\Controllers\Pharmacy\PharmacyController;
+use App\Http\Controllers\UserFolder\MainPageController;
+use App\Http\Controllers\UserFolder\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\DoctorController;
-use App\Http\Controllers\PharmacyController;
-use App\Http\Controllers\MedicinesController;
-use App\Http\Controllers\MainPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +29,13 @@ Route::group(['middleware' => ['auth:user-api', 'jwt.auth'], 'prefix' => 'user']
     Route::post('/refresh', [UserController::class, 'refresh']);
 
     Route::group(['prefix' => 'show/'], function (){
-        Route::get('medicines', [MedicinesController::class, 'index']);
-        Route::get('pharmacies', [MainPageController::class, 'index']);
+//        Route::get('medicines', [MedicinesController::class, 'index']);
+//        Route::get('pharmacies', [MainPageController::class, 'index']);
+
+        Route::get('medicine_page', [MainPageController::class, 'getMedicines']);
+        Route::get('pharmacies_page', [MainPageController::class, 'getPharmacies']);
+        Route::get('pharmacy_page/{name}', [MainPageController::class, 'getPharmacy']);
+
 
     });
 });
@@ -47,6 +51,14 @@ Route::group(['middleware' => ['auth:doctor-api', 'jwt.auth'], 'prefix' => 'doct
     Route::post('/logout', [DoctorController::class, 'logout']);
     Route::get('/profile', [DoctorController::class, 'doctorProfile']);
     Route::post('/refresh', [DoctorController::class, 'refresh']);
+
+    Route::group(['prefix' => 'edit/receipts'], function ($router) {
+        Route::get('/', [NewsController::class, 'index_for_subadmin']);
+        Route::get('/{id}', [NewsController::class, 'show_for_subadmin']);
+        Route::post('/', [NewsController::class, 'store']);
+        Route::put('/{id}', [NewsController::class, 'update']);
+        Route::delete('/{id}', [NewsController::class, 'destroy']);
+    });
 });
 
 
