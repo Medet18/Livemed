@@ -30,7 +30,7 @@ class AppointmentController extends Controller
         $did = DB::table('doctors')->where('doctor_specialist', $request->doctor_specialist)->first();
         try{
 
-            $news = new Appointment();
+//            $news = new Appointment();
             Appointment::create([
                 'appointment_reason' => $request->appointment_reason,
                 'appointment_date' => Carbon::create($request->appointment_date)->toDateString(),
