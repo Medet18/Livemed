@@ -83,7 +83,7 @@
             <a href="{{asset('client/purchase.blade.php')}}">
                 <div class="box">
                     <i class="fas fa-align-center" style="background: #cce9e4; color: #009379;"></i>
-                    <h3>История покупок</h3>
+                    <h3>Список поликлиник</h3>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, nisi.</p>
                 </div>
             </a>
