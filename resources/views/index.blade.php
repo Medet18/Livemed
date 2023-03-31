@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <link rel="stylesheet" href="{{asset('css/index.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
@@ -15,7 +15,7 @@
 <header class="header">
     <div class="container">
         <div class="logo">
-            <a href="#" id="logo" class="logo" onclick="window.location.href='{{asset('index.htm')}}'"> <span>Live</span>MedKZ </a>
+            <a href="#" id="logo" class="logo" onclick="window.location.href='{{ asset('index.blade.php') }}'"> <span>Live</span>MedKZ </a>
         </div>
 
         <nav class="menu">
@@ -41,17 +41,17 @@
         <!--            <button class="btn">City</button>-->
         <!--        </div>-->
         <div class="login-btn">
-            <button class="button" onclick="window.location.href='{{asset('login.htm')}}'">login</button>
+            <button class="button" onclick="window.location.href='{{asset('login.blade.php')}}'">login</button>
         </div>
 
 
     </div>
 </header>
 
-<section class="main">
+<section class="main" style="background-image:url({{url('/photo/home.webp')}})">
     <div class="container">
         <div class="main-info">
-            <h1 class="main-title">Make your life safer and more convenient</h1>
+            <h1 class="main-title">Make your life <br>safer and more convenient</h1>
             <div class="main-text">
                 Our product LiveMedKz, provides convenient services for obtaining medicines,
                 as well as prescriptions, on our website you can also get the information you are interested in,
@@ -72,7 +72,7 @@
 
         <div class="box-container">
 
-            <a href="{{asset('client/receipts.htm')}}">
+            <a href="{{asset('client/recepts.blade.php')}}">
                 <div class="box">
                     <i class="fas fa-scroll" style="background: #ffe0dc; color: #009379;"></i>
                     <h3>Мои рецепты</h3>
@@ -80,7 +80,7 @@
                 </div>
             </a>
 
-            <a href="{{asset('client/purchase.htm')}}">
+            <a href="{{asset('client/purchase.blade.php')}}">
                 <div class="box">
                     <i class="fas fa-align-center" style="background: #cce9e4; color: #009379;"></i>
                     <h3>История покупок</h3>
@@ -88,7 +88,7 @@
                 </div>
             </a>
 
-            <a href="{{asset('client/medicines.htm')}}}">
+            <a href="{{asset('client/medicines.blade.php')}}}">
                 <div class="box">
                     <i class="fas fa-shopping-bag" style="background: #fef7e5; color: #009379;"></i>
 
@@ -97,7 +97,7 @@
                 </div>
             </a>
 
-            <a href="{{asset('client/pharmacies.htm')}}}">
+            <a href="{{asset('client/pharmacies.blade.php')}}}">
                 <div class="box">
                     <i class="fas fa-globe-americas" style="background: #ffe0dc; color: #009379;"></i>
                     <h3>Список аптек</h3>
@@ -105,7 +105,7 @@
                 </div>
             </a>
 
-            <a href="{{asset('client/profile.htm')}}">
+            <a href="{{asset('client/profile.blade.php')}}">
                 <div class="box">
                     <i class="fas fa-user" style="background: #cce9e4; color: #009379;"></i>
                     <h3>Личные данные</h3>
@@ -113,7 +113,7 @@
                 </div>
             </a>
 
-            <a href="{{asset('client/contact.htm')}}}">
+            <a href="{{asset('client/contact.blade.php')}}}">
                 <div class="box">
                     <i class="fas fa-phone" style="background: #fef7e5; color: #009379;"></i>
                     <h3>Поддержка</h3>

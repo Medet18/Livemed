@@ -85,7 +85,7 @@ body {
 }
 
 .main {
-    /*background-image: url('../photo/home.webp'); !* 2points means outside of current folder*!*/
+    background-image: url("{{asset('asset/public/asset/photo/home.webp')}}"); /* 2points means outside of current folder*/
     background-position: center;
     background-size: cover;
     padding: 104px 0 54px 0;
@@ -97,7 +97,7 @@ body {
 
 .main-title {
     font-weight: bold;
-    /*font-size: 90px;*/
+    font-size: 80px;
     line-height: 110%;
     color: #130f40;
     margin-bottom: 40px;
