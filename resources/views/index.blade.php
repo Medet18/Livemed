@@ -58,7 +58,7 @@
                 we advise you to get acquainted with our website closer
             </div>
             <div class="main-action">
-                <button class="button" id="main-action">Смотреть</button>
+                <button class="button" id="main-action">Получить appointment</button>
             </div>
 
         </div>
