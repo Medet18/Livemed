@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+
 /********* Route for users ********/
 Route::group(['prefix' => 'user'], function ($router) {
     Route::post('/login', [UserController::class, 'login']);
