@@ -5,27 +5,44 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class AppointmentController extends Controller
 {
+
+    public function  getAppointments(): \Illuminate\Http\JsonResponse
+    {
+        $ap = Appointment::select(
+            'id',
+            'appointment_reason',
+            'appointment_date',
+            'hospital_name',
+            'doctor_specialist',
+            'appointment_number',
+            'appointment_user_id' )->where('appointment_user_id',  auth('user-api')->user()->id)->get();
+
+        return response()->json(["Appointments"=>$ap],200);
+    }
     public function store(Request $request): \Illuminate\Http\JsonResponse
     {
+        $did = DB::table('doctors')->where('doctor_specialist', $request->doctor_specialist)->first();
         try{
 
             $news = new Appointment();
             Appointment::create([
-                'subadmin_id' => auth('subadmin-api')->user()->id,
-                'title_of_news' => $request->title_of_news,
-                'description_of_news' => $request->description_of_news,
-                'photo_of_news' => $photo,
-                'date_of_news' => Carbon::create($request->date_of_news)->toDateString()
-
+                'appointment_reason' => $request->appointment_reason,
+                'appointment_date' => Carbon::create($request->appointment_date)->toDateString(),
+                'hospital_name' => $request->hospital_name,
+                'doctor_specialist' => $request->doctor_specialist,
+                'appointment_number'=> $request->appointment_number,
+                'appointment_user_id' => auth('user-api')->user()->id,
+                'appointment_doctor_id' => $did->id,
             ]);
 
 
-            return response()->json(['message' => 'News successfully stored!'], 200);
+            return response()->json(['message' => 'Appointment successfully stored!'], 200);
 
         } catch(\Exception $e){
 //            return response()->json(['message' =>'Something went wrong!'], 500);
@@ -33,26 +50,32 @@ class AppointmentController extends Controller
         }
     }
 
-    public function update(Request $request,$lang, $id): \Illuminate\Http\JsonResponse
+    public function update(Request $request, $id): \Illuminate\Http\JsonResponse
     {
-        try{
-            $news = Appointment::find($id);
+        $did = DB::table('doctors')->where('doctor_specialist', $request->doctor_specialist)->first();
 
-            if(!$news){
+        try{
+            $ap = Appointment::find($id);
+
+            if(!$ap){
                 return response()->json(['message' =>  'not_found'],404);
             }
-            elseif($news->subadmin_id == auth('subadmin-api')->user()->id){
+            elseif($ap->appointment_user_id == auth('user-api')->user()->id){
 
-                $news->title_of_news = $request->title_of_news;
-                $news->description_of_news = $request->description_of_news;
-                $news->date_of_news = Carbon::create($request->date_of_news)->toDateString();
+                $ap->appointment_reason = $request->appointment_reason;
+                $ap->appointment_date = Carbon::create($request->appointment_date)->toDateString();
+                $ap->hospital_name = $request->hospital_name;
+                $ap->doctor_specialist = $request->doctor_specialist;
+                $ap->appointment_number= $request->appointment_number;
+                $ap->appointment_doctor_id = $did->id;
 
 
-                $news->save();
-                return response()->json(['message' =>'News successfully updated!'], 200);
+
+                $ap->save();
+                return response()->json(['message' =>'Appointment successfully updated!'], 200);
             }
             else{
-                return response()->json(['message' => "U can't update! ,It's not ur's news. U can edit only urs news!"],200);
+                return response()->json(['message' => "U can't update! ,It's not ur's appointment. U can edit only urs appointments!"],200);
             }
 
         } catch(\Exception $e){
@@ -67,7 +90,7 @@ class AppointmentController extends Controller
         if(!$news){
             return response()->json(['message' =>'not_found'], 404);
         }
-        elseif($news->subadmin_id == auth('subadmin-api')->user()->id){
+        elseif($news->subadmin_id == auth('user-api')->user()->id){
 
 
             $news->delete();

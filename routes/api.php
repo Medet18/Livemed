@@ -6,6 +6,7 @@ use App\Http\Controllers\Pharmacy\PharmacyController;
 use App\Http\Controllers\UserFolder\MainPageController;
 use App\Http\Controllers\UserFolder\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppointmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,13 @@ Route::group(['middleware' => ['auth:user-api', 'jwt.auth'], 'prefix' => 'user']
         Route::get('pharmacies_page', [MainPageController::class, 'getPharmacies']);
         Route::get('pharmacy_page/{name}', [MainPageController::class, 'getPharmacy']);
 
+        Route::get('appointment_page', [AppointmentController::class, 'getAppointments']);
+    });
 
+    Route::group(['prefix' => 'edit/'], function ($router) {
+        Route::post('store/', [AppointmentController::class, 'store']);
+        Route::put('update/{id}', [AppointmentController::class, 'update']);
+//        Route::delete('destroy/{id}', [AppointmentController::class, 'destroy']);
     });
 });
 
