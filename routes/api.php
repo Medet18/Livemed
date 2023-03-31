@@ -1,14 +1,13 @@
 <?php
 
 use App\Http\Controllers\DoctorFolder\DoctorController;
+use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\Pharmacy\MedicinesController;
 use App\Http\Controllers\Pharmacy\PharmacyController;
+use App\Http\Controllers\UserFolder\AppointmentController;
 use App\Http\Controllers\UserFolder\MainPageController;
 use App\Http\Controllers\UserFolder\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AppointmentController;
-use App\Http\Controllers\DoctorFolder\ReceiptController;
-use App\Http\Controllers\HospitalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +37,8 @@ Route::group(['middleware' => ['auth:user-api', 'jwt.auth'], 'prefix' => 'user']
 //        Route::get('pharmacies', [MainPageController::class, 'index']);
 
 //        Route::get('receipt_page', [ReceiptController::class,'index']);
-        Route::get('hospital_page',[HospitalController::class,'getHospital']);
+        Route::get('hospitals_page',[MainPageController::class,'getHospitals']);
+        Route::get('hospital_page/{name}', [MainPageController::class, 'getHospital']);
         Route::get('medicine_page', [MainPageController::class, 'getMedicines']);
         Route::get('pharmacies_page', [MainPageController::class, 'getPharmacies']);
         Route::get('pharmacy_page/{name}', [MainPageController::class, 'getPharmacy']);
@@ -92,3 +92,4 @@ Route::group(['middleware' => ['auth:pharmacy-api', 'jwt.auth'], 'prefix' => 'ph
     });
 });
 
+//$items = Item::select('column1', 'column2', 'column3')->find($id);

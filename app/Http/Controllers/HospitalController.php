@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 class HospitalController extends Controller
 {
+
     public  function store(Request $request): \Illuminate\Http\JsonResponse
     {
         $did = Doctor::where('doctor_specialist','Surgeon')->first();

@@ -22,4 +22,5 @@ class Appointment extends Model
         'appointment_doctor_id',
 
     ];
+
 }
