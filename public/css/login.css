@@ -25,12 +25,11 @@ body {
 }
 
 .header .logo{
-    margin-left: 250px;
+    position: absolute;
     font-size: 1.8rem;
     color:#130f40;
     font-weight: bold;
-    position: absolute;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
 .header .logo span{
     color:#009379;
@@ -61,17 +60,19 @@ body {
 .login{
     overflow: hidden;/*Это помагает когда если картинка больше , тогда картинка обрезалось*/
     margin: 100px 0;
+
 }
 .login .container{
     position: relative;
     /*padding-bottom: 121px;*/
     background: #e5f4f2;
     border-radius: 25px;
+    height: 540px;
 }
 .login .sub-title{
     /*margin-bottom: 24px;*/
     /*margin-left: 104px;*/
-    text-align: center;
+    /*text-align: center;*/
     margin: 24px;
     color: #130f40;
 }
@@ -99,7 +100,7 @@ body {
 }
 
 .login .button{
-    width: 167px;
+    width: 344px;
 }
 
 .login-image{
@@ -109,21 +110,10 @@ body {
     width: 282px;
 }
 
-span::after {
-    padding-left: 5px;
-}
-
-input:invalid + span::after {
-    content: "✖";
-}
-
-input:valid + span::after {
-    content: "✓";
-}
-
 
 .new{
     overflow: hidden;/*Это помагает когда если картинка больше , тогда картинка обрезалось*/
+    font-family: sans-serif, Monteserat;
 
 }
 .new .container{
@@ -131,7 +121,7 @@ input:valid + span::after {
     padding-bottom: 121px;
 }
 .new .news{
-    height: 11rem;
+    height: 20rem;
     padding: 75px;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
     border:.1rem solid rgba(0,0,0,.1);
@@ -155,8 +145,8 @@ input:valid + span::after {
     height: 250px;
     border-radius: 50%;
     border: 35px solid #ff6250;
-    right: 0;
-    top: -70px;
+    right: 15px;
+    top: -90px;
     transform:rotate(-180deg);
 
 
@@ -196,11 +186,11 @@ input:valid + span::after {
     padding-right:35px;
     font-size: 1.1rem;
 }
-.footer .logo{
+.footer .logo2{
     font-size: 1.1rem;
     color:#E5E5E5;
     font-weight: bold;
 }
-.footer .logo span{
+.footer .logo2 span{
     color:#009379;
 }

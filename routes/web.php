@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,36 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/index', function () {
     return view('index');
 });
+//Route::group(['prefix' => 'user'], function ($router) {
+//    Route::get('login', [AuthController::class, 'index'])->name('login');
+//    Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post');
+//    Route::get('registration', [AuthController::class, 'registration'])->name('register');
+//    Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
+//});
+//
+//
+//Route::group(['middleware' => ['auth'], 'prefix' => 'user'], function ($router) {
+//    Route::get('dashboard', [AuthController::class, 'dashboard']);
+//    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+//    Route::get('/profile', [AuthController::class, 'userProfile'])->name('userprofile');
+//});
+
+//////////////////Test//////////////////
+Route::group(['prefix' => 'user'], function ($router) {
+    Route::get('login', [AuthController::class, 'index'])->name('login');
+    Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post');
+    Route::get('registration', [AuthController::class, 'registration'])->name('register');
+    Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
+});
+
+Route::group(['middleware' => ['web'], 'prefix' => 'user'], function ($router) {
+    Route::get('dashboard', [AuthController::class, 'dashboard']);
+    Route::get('mainpage', [AuthController::class, 'mainpage']);
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/profile', [AuthController::class, 'userProfile'])->name('userprofile');
+});
+
+
+

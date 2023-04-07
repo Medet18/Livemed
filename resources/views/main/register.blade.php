@@ -31,11 +31,10 @@
     <div class="container">
         <form action="" class="price-form">
             <h2 class="sub-title">Registration</h2>
-            <label> <input type="text" class="price-input" id="name" placeholder="Your name" required /></label>
-            <label> <input type="text" class="price-input" id="lastname" placeholder="Your lastname" required /></label>
-            <label> <input type="number" class="price-input" id="phone" placeholder="Phone number" min="12" max="12"> </label>
-            <label> <input type="date" class="price-input" id="birth_date" placeholder="Birth date" min="1980-01-01" max="2005-12-31"></label>
-            <label> <input type="number" class="price-input" id="iin" placeholder="IIN" min="12" max="12"> </label>
+            <label> <input type="text" class="price-input" id="full_name" placeholder="Full name" required /></label>
+            <label> <input type="number" class="price-input" id="user_phone" placeholder="Phone number" min="12" max="12"> </label>
+            <label> <input type="date" class="price-input" id="date_of_birth" placeholder="Birth date" min="1980-01-01" max="2005-12-31"></label>
+            <label> <input type="number" class="price-input" id="IIN" placeholder="IIN" min="12" max="12"> </label>
             <label>  <input type="email" class="price-input" id="email" placeholder="Ваше email"> </label>
             <label> <input type="password" class="price-input" id="password" placeholder="Ваш password"> </label>
             <label> <input type="password" class="price-input" id="password_confirmation" placeholder="Password confirmation"> </label>
