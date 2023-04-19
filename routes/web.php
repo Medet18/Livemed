@@ -40,10 +40,23 @@ Route::group(['prefix' => 'user'], function ($router) {
 });
 
 Route::group(['middleware' => ['web'], 'prefix' => 'user'], function ($router) {
-    Route::get('dashboard', [AuthController::class, 'dashboard']);
+//    Route::get('dashboard', [AuthController::class, 'dashboard']);
     Route::get('mainpage', [AuthController::class, 'mainpage']);
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/profile', [AuthController::class, 'userProfile'])->name('userprofile');
+});
+
+/////////////////////Doctor
+Route::group(['prefix' => 'doctor'], function ($router) {
+    Route::get('/login', [AuthController::class, 'index'])->name('doctor.login');
+    Route::post('/post-login', [AuthController::class, 'postLogin'])->name('doctor.login.post');
+    });
+
+Route::group(['middleware' => ['web'], 'prefix' => 'doctor'], function ($router) {
+    Route::get('dashboard', [AuthController::class, 'dashboard']);
+    Route::get('search', [AuthController::class, 'search']);
+    Route::get('logout', [AuthController::class, 'logout'])->name('doctor.logout');
+//    Route::get('/profile', [AuthController::class, 'userProfile'])->name('userprofile');
 });
 
 

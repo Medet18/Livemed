@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <link rel="stylesheet" href="{{asset('../css/index.css')}}">
-    <link rel="stylesheet" href="{{asset('../css/user_profile.css')}}">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/user_profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -17,7 +17,7 @@
 <header class="header">
     <div class="container">
         <div class="logo">
-            <a href="#" id="logo" class="logo" onclick="window.location.href='{{asset('search.htm')}}'"> <span>Live</span>MedKZ </a>
+            <a href="#" id="logo" class="logo" onclick="window.location.href='indexDoctor.htm'"> <span>Live</span>MedKZ </a>
         </div>
 
     </div>
@@ -43,7 +43,7 @@
                 <h1>Email: RashidBukanov@gmail.com</h1>
             </div>
             <div class="pharm_img">
-                <img src="{{asset('../photo/user.png')}}" alt="UserImage">
+                <img src="../photo/user.png" alt="UserImage">
             </div>
         </div>
         <div class="recepts">
@@ -112,5 +112,5 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="{{asset('../js/logo.js')}}"></script>
+<script src="../js/logo.js"></script></body>
 </html>

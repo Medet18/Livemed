@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
-    <link rel="stylesheet" href="{{asset('css/login.css')}}">
+    <link rel="stylesheet" href="{{asset('css/loginDoctor.css')}}">
     <link rel="stylesheet" href="{{asset('css/register.css')}}">
-{{--    <link rel="stylesheet" href="{{asset('css/search.css')}}">--}}
+        <link rel="stylesheet" href="{{asset('css/search.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <style type="text/css">
@@ -43,7 +43,7 @@
 
         .container .logo{
             font-size: 1.8rem;
-                color:#130f40;
+            color:#130f40;
             font-weight: bold;
             position: absolute;
             margin-bottom: 35px;
