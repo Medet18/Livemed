@@ -1,28 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/user_profile.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+@extends('doctorINT.doctorLayout')
 
-
-</head>
-<body>
-<header class="header">
-    <div class="container">
-        <div class="logo">
-            <a href="#" id="logo" class="logo" onclick="window.location.href='indexDoctor.htm'"> <span>Live</span>MedKZ </a>
-        </div>
-
-    </div>
-</header>
-
+@section('content')
 <section class="recept-title">
     <div class="container">
         <div class="title">
@@ -43,7 +21,7 @@
                 <h1>Email: RashidBukanov@gmail.com</h1>
             </div>
             <div class="pharm_img">
-                <img src="../photo/user.png" alt="UserImage">
+                <img src="../../../public/photo/user.png" alt="UserImage">
             </div>
         </div>
         <div class="recepts">
@@ -90,27 +68,4 @@
     </div>
 </section>
 
-
-
-
-
-<footer class="footer">
-    <div class="container">
-        <div class="logo">
-            <a href="#" class="logo"> @ 2023 LiveMedKZ </a>
-        </div>
-
-        <div class="rights">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-github"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-linkedin"></i>
-        </div>
-
-    </div>
-</footer>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="../js/logo.js"></script></body>
-</html>
+@endsection

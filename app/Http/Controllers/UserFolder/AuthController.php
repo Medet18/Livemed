@@ -1,24 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\UserFolder;
 
+use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
-use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
     public function index()
     {
-        return view('test.login');
+        return view('client.login');
     }
 
     public function registration()
     {
-        return view('test.register');
+        return view('client.register');
     }
 
     public function postLogin(Request $request)
@@ -55,14 +55,6 @@ class AuthController extends Controller
         return Redirect("user/login")->withSuccess('Great! You have Successfully loggedin');
     }
 
-    public function dashboard()
-    {
-        if(Auth::check()){
-            return view('dashboard');
-        }
-
-        return redirect("user/login")->withSuccess('Opps! You do not have access');
-    }
     public  function  mainpage(){
         if(Auth::check()){
             return view('index');

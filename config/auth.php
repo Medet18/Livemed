@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users_p',
+        'passwords' => ['users_p','doctors_p']
     ],
 
     /*
@@ -39,6 +39,10 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'doctor'=>[
+            'driver' => 'session',
+            'provider' => 'doctor',
         ],
         'user-api'=> [
             'driver' => 'jwt',
@@ -120,13 +124,19 @@ return [
             'throttle' => 60,
         ],
         'doctors_p' => [
-            'provider' => 'doctors',
+            'provider' => 'doctor',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
         ],
         'pharmacies_p' => [
-            'provider' => 'pharmacies',
+            'provider' => 'pharmacy',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'doctor' => [
+            'provider' => 'doctor',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

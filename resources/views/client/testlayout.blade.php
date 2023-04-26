@@ -9,12 +9,21 @@
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
     <link rel="stylesheet" href="{{asset('css/login.css')}}">
     <link rel="stylesheet" href="{{asset('css/register.css')}}">
-{{--    <link rel="stylesheet" href="{{asset('css/search.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('css/appointment.css')}}">
+    <link rel="stylesheet" href="{{asset('css/appoTime.css')}}">
+    <link rel="stylesheet" href="{{asset('css/contact.css')}}">
+    <link rel="stylesheet" href="{{asset('css/hospital_page.css')}}">
+    <link rel="stylesheet" href="{{asset('css/hospitals.css')}}">
+    <link rel="stylesheet" href="{{asset('css/medicines.css')}}">
+    <link rel="stylesheet" href="{{asset('css/pharmacies.css')}}">
+    <link rel="stylesheet" href="{{asset('css/pharmacy_page.css')}}">
+    <link rel="stylesheet" href="{{asset('css/profile.css')}}">
+    <link rel="stylesheet" href="{{asset('css/recepts.css')}}">
+    <link rel="stylesheet" href="{{asset('css/recept_page.css')}}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <style type="text/css">
-        /*@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);*/
-
         body{
             font-family: sans-serif, Monteserat;
             margin: 0;
@@ -133,6 +142,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="{{asset('js/index.js')}}"></script>
 <script src="{{asset('js/logo.js')}}"></script>
+<script src="{{asset('js/time.js')}}"></script>
 
 </body>
 </html>

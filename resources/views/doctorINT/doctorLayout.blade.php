@@ -8,13 +8,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
     <link rel="stylesheet" href="{{asset('css/loginDoctor.css')}}">
+    <link rel="stylesheet" href="{{asset('css/search.css')}}">
+    <link rel="stylesheet" href="{{asset('css/indexDoctor.css')}}">
     <link rel="stylesheet" href="{{asset('css/register.css')}}">
-        <link rel="stylesheet" href="{{asset('css/search.css')}}">
+    <link rel="stylesheet" href="{{asset('css/doctorProfile.css')}}">
+    <link rel="stylesheet" href="{{asset('css/give_recept.css')}}">
+    <link rel="stylesheet" href="{{asset('css/medicinesDoctor.css')}}">
+    <link rel="stylesheet" href="{{asset('css/notification.css')}}">
+    <link rel="stylesheet" href="{{asset('css/user_profile.css')}}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    <style type="text/css">
-        /*@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);*/
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 
+    <style type="text/css">
         body{
             font-family: sans-serif, Monteserat;
             margin: 0;
@@ -91,17 +99,17 @@
                 <ul class="navbar-nav ml-auto">
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            <a class="nav-link" href="{{ route('doctor.login') }}">Login</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Register</a>
-                        </li>
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="{{ route('register') }}">Register</a>--}}
+{{--                        </li>--}}
                     @else
                         <li class="nav-item" style="display: flex">
                             @if(Auth::check())
-                                <a class="nav-link" href="">{{ Auth::user()->full_name }}</a>
+                                <a class="nav-link" href="">{{ Auth::user()->doctor_name }}</a>
                             @endif
-                            <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                            <a class="nav-link" href="{{ route('doctor.logout') }}">Logout</a>
                         </li>
                     @endguest
                 </ul>
@@ -110,6 +118,7 @@
         </div>
     </nav>
 </header>
+
 @yield('content')
 
 <footer class="footer">
@@ -130,9 +139,10 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="{{asset('js/index.js')}}"></script>
 <script src="{{asset('js/logo.js')}}"></script>
+<script src="{{asset('js/time.js')}}"></script>
 
 </body>
 </html>

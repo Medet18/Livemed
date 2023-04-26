@@ -1,4 +1,4 @@
-@extends('test.testlayout')
+@extends('client.testlayout')
 
 @section('content')
 
@@ -26,7 +26,7 @@
 
 <section class="new" id="new">
     <div class="container">
-        <div class="news">
+        <div class="news" style="min-height: 20rem;">
             <h2 class="sub-title">Новости LiveMedKZ !</h2>
             <div class="news-text">Будьте в курсе новостей с LiveMedKZ</div>
             <button class="btn" type="button" style="max-width: 250px;">Начать -></button>

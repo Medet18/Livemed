@@ -1,5 +1,5 @@
 
-@extends('test.testlayout')
+@extends('client.testlayout')
 
 @section('content')
 

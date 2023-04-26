@@ -1,35 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link rel="stylesheet" href="../css/indexDoctor.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+@extends('doctorINT.doctorLayout')
 
+@section('content')
 
-</head>
-<body>
-<header class="header">
-    <div class="container">
-        <div class="logo">
-            <a href="#" id="logo" class="logo" onclick="window.location.reload()"> <span>Live</span>MedKZ </a>
-        </div>
-
-        <div class="tit">
-            <h1>DoctorIndex</h1>
-        </div>
-        <div class="login-btn">
-            <button class="button" onclick="window.location.href='../doctor/loginDoctor.htm'">login</button>
-        </div>
-
-
-    </div>
-</header>
-
-<section class="main">
+<section class="main" style="background-image:url({{url('/photo/dc.jpeg')}})">
     <div class="container">
         <div class="main-info">
             <h1 class="main-title">Make your life <br>safer and more convenient</h1>
@@ -101,7 +74,7 @@
 
 <section class="new" id="new">
     <div class="container">
-        <div class="news">
+        <div class="news" style="min-height: 20rem;">
             <h2 class="sub-title">Новости LiveMedKZ !</h2>
             <div class="news-text">Будьте в курсе новостей с LiveMedKZ</div>
             <button class="button" type="button" id="price-action" style="max-width: 250px;">Начать -></button>
@@ -111,29 +84,6 @@
     </div>
 </section>
 
-<div id="app_basic" v-bind:title="timestamp" class="experiment-block">{{ message }}</div>
-
-<footer class="footer">
-    <div class="container">
-        <div class="logo">
-            <a href="#" class="logo"> @ 2023 LiveMedKZ </a>
-        </div>
-
-        <div class="rights">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-github"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-linkedin"></i>
-        </div>
-
-    </div>
-</footer>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="../js/index.js"></script>
-<script src="../js/logo.js"></script>
-</body>
-</html>
+@endsection
