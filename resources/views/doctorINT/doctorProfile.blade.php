@@ -1,49 +1,33 @@
 @extends('doctorINT.doctorLayout')
 
 @section('content')
-<header class="header">
+
+
+<section class="receipt-title8">
     <div class="container">
-        <div class="logo">
-            <a href="#" id="logo" class="logo" onclick="window.location.href='indexDoctor.html'"> <span>Live</span>MedKZ </a>
-        </div>
-
-        <!--        <div class="cities">-->
-        <!--            <button class="btn">City</button>-->
-        <!--        </div>-->
-        <!--        <div id="login-btn">-->
-        <!--            <button class="btn">login</button>-->
-        <!--        </div>-->
-
-
-    </div>
-</header>
-
-<section class="recept-title">
-    <div class="container">
-        <div class="title">
+        <div class="title2">
             <i class="fas fa-user"></i>
-            <a href="indexDoctor.htm"><h2>Doctor profile</h2></a>
+            <a href="#"><h3>Doctor profile</h3></a>
         </div>
     </div>
 </section>
 
-<section class="recepts">
+<section class="receipts">
     <div class="container">
-        <div class="pharm_img">
-            <img src="../../../public/photo/user.png" alt="UserImage">
+        <div class="pharm_img1">
+            <img src="{{asset('../photo/user.png')}}" alt="UserImage">
         </div>
-        <div class="pharm_info">
-            <h1>Name: Rashid</h1>
-            <h1>Lastname: Bukanov</h1>
-            <h1>IIN: 020302345678</h1>
-            <h1>DOB: 02.03.2002y</h1>
-            <h1>Email: RashidBukanov@gmail.com</h1>
+        <div class="pharm_info1">
+            <h3>Name: {{$name}}</h3>
+            <h3>Specialist:  {{$specialist}}</h3>
+            <h3>Email: {{$email}}</h3>
+            <h3>Phone Number: {{$doctor_phone}}</h3>
         </div>
 
-        <div class="back_fone_qr">
+        <div class="back_fone_qr1">
             <button class="button">Forgot password</button>
-            <div class="pharm_qr">
-                <img src="../../../public/photo/qr_code.png" alt="QR">
+            <div class="pharm_qr1">
+                <img src="{{asset('../photo/qr_code.png')}}" alt="QR">
             </div>
         </div>
     </div>

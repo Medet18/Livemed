@@ -1,45 +1,60 @@
-.recept-title .container{
-    padding: 5px;
-    /*display: flex;*/
-    /*align-items: center;*/
-}
-.recept-title .container .sup{
-    display: flex;
-    justify-content: center;
-    margin: 50px;
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding:.8rem 3rem;
+    background:#009379;
+    color:#E5E5E5;
+    cursor: pointer;
+    font-size: 1.4rem;
+    border-radius: 35px;
+    font-weight: 500;
+    text-align: center;
+    border: 0;
 }
 
-.title{
+.btn:hover{
+    background: #076750;
+}
+.recept-title2 .container{
+    padding: 5px;
+}
+.recept-title2 .container .sup{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.title3{
     display: flex;
     align-items: center;
     margin: 15px 0;
-    padding: 25px;
+    padding: 15px;
     border: 1px solid #E5E5E5;
-    width: 350px;
+    width: 320px;
     border-radius: 20px;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
     background: #ffffff;
 
 }
-.title a{
+.title3 a{
     text-decoration: none;
 }
-.title:hover h2 {
+.title3:hover h3 {
     color: #75c2b5;
 }
 
-.recept-title h2{
+.recept-title2 h3{
     margin-left: 25px;
     color: #130f40;
 }
-.recept-title i {
+.recept-title2 i {
     font-size: 25px;
     color: #75c2b5;
 }
 
 
 
-.recepts .container{
+.recepts2 .container{
     /*padding: 5px;*/
     min-height: 600px;
     border-radius: 20px;
@@ -53,14 +68,14 @@
     justify-content: space-around;
 }
 
-.price-form{
+.price-form2{
     max-width: 344px;
     padding:40px;
 
 }
-.price-input{
+.price-input2{
     padding: 22px 18px;
-    width: 586px;
+    width: 555px;
     height: 65px;
     background: #FFFFFF;
     border: 1px solid #5D5D5F;
@@ -72,10 +87,10 @@
     outline: none;
     margin-bottom: 15px;
 }
-.price-input::placeholder{
+.price-input2::placeholder{
     color: #5D5D5F;
 }
-.pharm_title textarea{
+.pharm_title2 textarea{
     border: 1px solid #5D5D5F;
     border-radius: 15px;
     width: 555px;
@@ -85,7 +100,7 @@
     font-size: 16px;
     padding: 15px;
 }
-.pharm_title .button{
+.pharm_title2 .button{
     margin-left: 110px;
 }
 .contact h1{

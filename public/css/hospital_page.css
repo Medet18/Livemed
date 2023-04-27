@@ -1,45 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-body {
-    font-family: sans-serif, Monteserat;
-    background: #F8F9FF;
-    height: 100%;
-}
-
-.header {
-    border-bottom: 1px solid #E5E5E5;
-    padding: 25px 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.header .container {
-    display: flex;
-    align-items: center;
-}
-
-/*.logo img {*/
-/*    vertical-align: bottom;*/
-/*}*/
-.header .logo{
-    position: absolute;
-    font-size: 1.8rem;
-    color:#130f40;
-    font-weight: bold;
-    margin-bottom: 25px;
-}
-.header .logo span{
-    color:#009379;
-}
-
-.header .logo a{
-    text-decoration: none;
-}
 .btn{
     display: inline-block;
     margin-top: 1rem;
@@ -56,31 +14,6 @@ body {
 
 .btn:hover{
     background: #076750;
-}
-
-.menu {
-    margin-left: 244px;
-}
-
-.menu ul {
-    list-style: none; /*deleted standard list icons*/
-    display: flex;
-}
-
-.menu-item {
-    margin-right: 75px;
-    /*background: #009379;*/
-}
-
-.menu-item a {
-    font-size: 20px;
-    color: #130f40;
-    text-decoration: none; /*deleted standard link line*/
-}
-
-.menu-item a:hover {
-    /*border-bottom: 2px solid black;*/
-    color: #009379;
 }
 
 .recept-title .container{
@@ -159,37 +92,4 @@ body {
     padding: 2px 25px;
     cursor: pointer;
     /*padding: 65px 25px 30px;*/
-}
-
-
-
-.footer{
-    border-top: 1px solid #E5E5E5;
-    padding: 25px 0;
-    background: #2D2D2D;
-}
-.footer a{
-    text-decoration: none;
-}
-
-.footer .container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.rights{
-    font-size: 15px;
-    color: #E5E5E5;
-}
-.rights i{
-    padding-right:35px;
-    font-size: 1.1rem;
-}
-.footer .logo{
-    font-size: 1.1rem;
-    color:#E5E5E5;
-    font-weight: bold;
-}
-.footer .logo span{
-    color:#009379;
 }

@@ -1,3 +1,4 @@
+
 /*.btn{*/
 /*    display: inline-block;*/
 /*    margin-top: 1rem;*/
@@ -16,79 +17,76 @@
 /*    background: #076750;*/
 /*}*/
 
-.recept-title .container{
-    padding: 5px;
+.receipt-title8 .container{
+    padding: 0;
 }
 
-.title{
+.title2{
     display: flex;
     align-items: center;
     margin: 15px 0;
-    padding: 25px;
+    padding: 15px 25px;
     border: 1px solid #E5E5E5;
-    width: 350px;
+    width: 280px;
     border-radius: 20px;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
     background: #ffffff;
 
 }
-.title a{
+.title2 a{
     text-decoration: none;
 }
-.title:hover h2 {
+.title2:hover h3 {
     color: #75c2b5;
 }
-.recept-title h2{
+.receipt-title8 h3{
     margin-left: 25px;
     color: #130f40;
 }
-.recept-title i {
+.receipt-title8 i {
     font-size: 25px;
     color: #75c2b5;
 }
 
 
 
-.recepts .container{
-    /*padding: 5px;*/
-    min-height: 1000px;
+.receipts .container{
+    min-height: 1150px;
     border-radius: 20px;
     border: 1px solid #E5E5E5;
     margin-bottom: 40px;
     background: #ffffff;
 }
 
-.back_fone{
-    min-height: 820px;
-    /*background:#f8d57e;*/
+.pharm_img1 {
+    display: flex;
+    justify-content: center;
 }
-/*.back_fone h1{*/
-/*    margin-left: 25px;*/
-/*    padding: 65px 25px 0;*/
-/*    color: #130f40;*/
-/*}*/
-.pharm_title h1{
-    margin-left: 25px;
-    padding: 65px 25px 30px;
+.pharm_img1 img{
+    width: 350px;
+    height: 300px;
+}
+.pharm_info1{
+    margin: 20px 50px;
+}
+.pharm_info1 h3{
     color: #130f40;
-    font-size: 30px;
+    padding: 25px 90px;
+    font-weight: bold;
 }
-.pharm_title a{
-    text-decoration: none;
-    font-size: 20px;
-    color: #130f40;
-    margin-left: 25px;
-    padding: 65px 25px 30px;
+.back_fone_qr1{
+    display: flex;
+    justify-content: space-between;
 }
-.pharm_title i{
-    margin-left: 10px;
-    color: #009379;
-    font-size: 25px;
+.back_fone_qr1 .button{
+    margin: 100px 100px;
 }
-.pharm_title p{
-    font-size: 20px;
-    color: #009379;
-    margin-left: 25px;
-    padding: 2px 25px;
-    /*padding: 65px 25px 30px;*/
+.pharm_qr1{
+    /*display: flex;*/
+    float: right;
+}
+.pharm_qr1 img{
+    width: 250px;
+    height: 250px;
+    margin: 50px 90px;
 }

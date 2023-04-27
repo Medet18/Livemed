@@ -10,7 +10,7 @@ class SearchPatientController extends Controller
 {
     public function index(){
         $data = DB::table('users')->paginate(10);
-        return view('doctor.search', compact('data'));
+        return view('doctorINT.search', compact('data'));
     }
 
     public function search(Request $request){
@@ -19,6 +19,6 @@ class SearchPatientController extends Controller
         $data = $data->where('IIN', 'LIKE', "%" . $request->IIN . "%");
 
         $data = $data->paginate(10);
-        return view('doctor.search', compact('data'));
+        return view('doctorINT.search', compact('data'));
     }
 }

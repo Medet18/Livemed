@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DoctorFolder\DoctorAuthController;
+use App\Http\Controllers\DoctorFolder\ReceiptController;
 use App\Http\Controllers\DoctorFolder\SearchPatientController;
 use App\Http\Controllers\UserFolder\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -40,16 +41,22 @@ Route::group(['prefix' => 'doctor'], function ($router) {
 });
 
 Route::group(['middleware' => ['auth:doctor'], 'prefix' => 'doctor'], function ($router) {
-    Route::get('mainPage', [DoctorAuthController::class, 'mainPage']);
+    Route::get('mainPage', [DoctorAuthController::class, 'mainPage'])->name('mainPage');
     Route::get('logout', [DoctorAuthController::class, 'logout'])->name('doctor.logout');
-   // Route::get('/profile', [AuthController::class, 'doctorProfile'])->name('doctorProfile');
+    Route::get('profile', [DoctorAuthController::class, 'doctorProfile'])->name('doctorProfile');
+    Route::get('contact', [DoctorAuthController::class, 'contact'])->name('doctor.contact');
+    Route::get('getReceipts', [ReceiptController::class, 'getReceipts'])->name('getReceipts');
+    Route::get('getReceiptPage', [ReceiptController::class, 'getReceiptPage'])->name('getReceiptPage');
+    Route::get('getNotifications', [ReceiptController::class, 'getNotifications'])->name('getNotifications');
+    Route::get('getUserProfile', [ReceiptController::class, 'getUserProfile'])->name('getUserProfile');
 
-    Route::group(['prefix' => 'edit/'], function ($router) {
+
+    Route::group(['prefix' => 'edit'], function ($router) {
+        Route::get('/index', [SearchPatientController::class,'index'])->name('doctor.index');
         Route::get('/search', [SearchPatientController::class, 'search'])->name('doctor.search');
-        Route::get('/{id}', [SearchPatientController::class, 'show_for_subadmin']);
-        Route::post('/', [SearchPatientController::class, 'store']);
-        Route::put('/{id}', [SearchPatientController::class, 'update']);
-        Route::delete('/{id}', [SearchPatientController::class, 'destroy']);
+
+        Route::get('/setReceipt', [ReceiptController::class, 'setReceipt'])->name('setReceipt');
+        Route::get('setMedicines', [ReceiptController::class, 'setMedicines'])->name('setMedicines');
     });
 });
 

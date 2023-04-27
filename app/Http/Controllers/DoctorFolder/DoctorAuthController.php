@@ -51,8 +51,17 @@ class DoctorAuthController extends Controller
     }
 
     public function doctorProfile(){
-        Auth::guard('doctor')->user();
+        $doctor_info =  Auth::guard('doctor')->user();
+        $name = $doctor_info->doctor_name;
+        $spec = $doctor_info->doctor_specialist;
+        $email = $doctor_info->email;
+        $phone_number = $doctor_info->doctor_phone;
 
+        return view('doctorINT.doctorProfile',['name' => $name, 'specialist' => $spec, 'email' =>$email, 'doctor_phone' => $phone_number]);
+    }
+
+    public function contact(){
+        return view('doctorINT.contactDoctor');
     }
 
 }

@@ -3,142 +3,87 @@
 namespace App\Http\Controllers\DoctorFolder;
 
 use App\Http\Controllers\Controller;
-//use App\Http\Requests\NewsStoreReq;
 use App\Models\Receipt;
-use Carbon\Carbon;
-//use http\Env\Request;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 class ReceiptController extends Controller
 {
-    /////////////////// Display only for users////////////////////////////
-//    public function index_for_user(): \Illuminate\Http\JsonResponse
-//    {
-//        $news = News::all();
-//        return response()->json([__('word.news')=>$news], 200);
-//    }
-//
-//    public function show_for_user($lang, $id): \Illuminate\Http\JsonResponse
-//    {
-//        $news = News::find($id);
-//        if(!$news){
-//            return response()->json([__('word.message') => __('word.not_found')],404);
-//        }
-//
-//        return response()->json([__('word.news')=>$news], 200);
-//
-//    }
-    ///////////////////////////////////////////////////////////////////
+    public $number_receipt;
 
 
-    //////////////////////Display for subadmins///////////////////////////
-
-//    public function index_for_subadmin(): \Illuminate\Http\JsonResponse
-//    {
-//        $new = News::where('subadmin_id',  auth('subadmin-api')->user()->id)->get();
-//        return response()->json([__('word.news')=>$new],200);
-//    }
-//
-//    public function show_for_subadmin($lang, $id): \Illuminate\Http\JsonResponse
-//    {
-//        //$news = News::where('subadmin_id', \Auth::id())->where('id', $id)->first();
-//        $news = News::find($id);
-//        if(!$news){
-//            return response()->json([__('word.message')=> __('word.not_found')],404);
-//        }
-//        elseif($news->subadmin_id == auth('subadmin-api')->user()->id){
-//            return response()->json([__('word.message')=> $news],200);
-//        }
-//        else{
-//            return response()->json([__('word.message')=> __('word.access_search')],403);//"U can see only ur's news! . Look better your id's in show route!"],200);
-//        }
-//    }
-
-
-    public function store(Request $request): \Illuminate\Http\JsonResponse
-    {
-        try{
-
-            $rec = new Receipt();
-            Receipt::create([
-//                'subadmin_id' => auth('subadmin-api')->user()->id,
-                'receipt_title' => $request->title_of_news,
-                'description_of_news' => $request->description_of_news,
-                'photo_of_news' => $photo,
-                'date_of_news' => Carbon::create($request->date_of_news)->toDateString()
-
-            ]);
-
-            return response()->json(['message' => 'News successfully stored!'], 200);
-
-        } catch(\Exception $e){
-            return response()->json(['message' =>'Something went wrong!'], 500);
-            //return response()->json(['Exception' => $e], 500);
-        }
+    public function getReceipts(){
+//        $rec = DB::table('receipts')->paginate(10);
+        return view('doctorINT.receiptsDoctor');
     }
 
-    public function update(Request $request,$lang, $id): \Illuminate\Http\JsonResponse
-    {
-        try{
-            $rec = Receipt::find($id);
 
-            if(!$rec){
-                return response()->json(['message' => 'Not_found!'],404);
-            }
-            elseif($rec->subadmin_id == auth('subadmin-api')->user()->id){
-
-                $rec->title_of_news = $request->title_of_news;
-                $rec->description_of_news = $request->description_of_news;
-                $rec->date_of_news = Carbon::create($request->date_of_news)->toDateString();
-
-//                if($request->photo_of_news){
-//                    $storage = Storage::disk('public'); //public storage
-//
-//                    //old image delete
-//                    if($storage->exists($news->photo_of_news))
-//                        $storage->delete($news->photo_of_news);
-//
-//                    //Image name
-//                    $photo = Str::random(32).".".$request->photo_of_news->getClientOriginalExtension();
-//                    $news->photo_of_news = $photo;
-//
-//                    //Image save in public folder
-//                    $storage->put($photo, file_get_contents($request->photo_of_news));
-//                }
-
-                $rec->save();
-                return response()->json(['message' =>'News successfully updated!'], 200);
-            }
-            else{
-                return response()->json(['message' => "U can't update! ,It's not ur's news. U can edit only urs news!"],200);
-            }
-
-        } catch(\Exception $e){
-            return response()->json(['message' => 'something went wrong'],500);
-            //return response()->json(['message' => $e],500);
-        }
+    public function getReceiptPage(){
+//        $rec = DB::table('receipts')->paginate(10);
+        return view('doctorINT.recept_pageDoctor');
     }
 
-    public function destroy($lang, $id): \Illuminate\Http\JsonResponse
-    {
-        $rec = Receipt::find($id);
-        if(!$rec){
-            return response()->json(['message' => 'not_found'], 404);
-        }
-        elseif($rec->subadmin_id == auth('subadmin-api')->user()->id){
 
-            $storage = Storage::disk('public');
-            if($storage->exists($news->photo_of_news))
-                $storage->delete($news->photo_of_news);
+    public  function getNotifications(){
+        return view('doctorINT.notification');
+    }
 
-            $news->delete();
+    public function getUserProfile(){
+        return view('doctorINT.user_profile');
+    }
 
-            return response()->json(['message' =>'News successfully deleted!'], 200);
-        }
-        else{
-            return response()->json(['message'=>"U can't delete news, Delete only urs new"], 200);
-        }
+    public function setReceipt(){
+        return view('doctorINT.give_recept');
+    }
+
+    public function setMedicines(){
+        return view('doctorINT.medicinesDoctor');
+    }
+
+    public function index(Request $request){
+        $id = $request->employee_id;
+        $name = $request->full_name;
+        $iin = $request->IIN;
+        $avatar = $request->avatar;
+        return view('doctor.reciept',['id' => $id, 'name' => $name, 'iin'=>$iin,'avatar'=> $avatar]);
+    }
+
+    public function addReciept(Request $request){
+        $receipt = \App\Models\Receipt::create([
+            'receipt_title' => $request->receipt_title,
+            'receipt_comments' => $request->receipt_comments,
+            'receipt_date' => $request->expired_date,
+            'receipt_doctor_id' => $request->doctor,
+            'receipt_user_id' => $request->patient
+        ]);
+        // return redirect()->route('doctor.search');
+        return redirect()->action([ReceiptController::class, 'getMedicine'], ['id' => $receipt->id]);
+    }
+
+    public function getMedicine(Request $request){
+        $data = DB::table('medicines')->paginate(10);
+        $id = $request->id;
+        return view('doctor.receipt.search', compact('data'))->with('receipt_id',$id);
+    }
+
+    public function addMedicine(Request $request){
+        $medicine = $request->medicine_id;
+        $receipt = $request->reciept_id;
+        $data = DB::table('medicine_receipts')->insert([
+            'medicine_id' => $medicine,
+            'receipt_id' => $receipt
+        ]);
+        return redirect()->action([ReceiptController::class, 'getMedicine'], ['id' => $receipt]);
+
+    }
+
+    public function searchMedicine(Request $request){
+        $data = DB::table('medicines');
+
+        $data = $data->where('product_name', 'LIKE', "%" . $request->search . "%");
+
+        $data = $data->paginate(10);
+        return view('doctor.receipt.search', compact('data'));
     }
 }

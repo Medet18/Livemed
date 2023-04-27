@@ -62,32 +62,6 @@ body {
 /*    background: #076750;*/
 /*}*/
 
-.menu {
-    margin-left: 244px;
-}
-
-.menu ul {
-    list-style: none; /*deleted standard list icons*/
-    display: flex;
-}
-
-.menu-item {
-    margin-right: 75px;
-    /*background: #009379;*/
-}
-
-.menu-item a {
-    font-size: 20px;
-    color: #130f40;
-    text-decoration: none; /*deleted standard link line*/
-}
-
-.menu-item a:hover {
-    /*border-bottom: 2px solid black;*/
-    color: #009379;
-}
-
-
 .button {
     padding: 20px;
     width: 334px;

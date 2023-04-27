@@ -15,7 +15,7 @@
                 <label>
                     <textarea name="sms" cols="30" rows="10" placeholder="Your message"></textarea>
                 </label>
-                <button class="button" type="button" id="price-action">Next</button>
+                <a href="{{ route('setMedicines') }}"><button class="button" type="button" id="price-action">Next</button></a>
             </form>
 
         </div>

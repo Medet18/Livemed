@@ -27,7 +27,7 @@
 
         <div class="box-container">
 
-            <a href="search.htm">
+            <a href="{{ route('doctor.index') }}}">
                 <div class="box">
                     <i class="fas fa-search" style="background: #ffe0dc; color: #009379;"></i>
                     <h3>Patient search</h3>
@@ -35,7 +35,7 @@
                 </div>
             </a>
 
-            <a href="notification.htm">
+            <a href="{{ route('getNotifications') }}">
                 <div class="box">
                     <i class="fa fa-bell" style="background: #cce9e4; color: #009379;"></i>
                     <h3>Notification</h3>
@@ -43,7 +43,7 @@
                 </div>
             </a>
 
-            <a href="give_recept.htm">
+            <a href="{{ route('getReceipts') }}">
                 <div class="box">
                     <i class="fas fa-pen" style="background: #fef7e5; color: #009379;"></i>
 
@@ -52,7 +52,7 @@
                 </div>
             </a>
 
-            <a href="doctorProfile.htm">
+            <a href="{{ route('doctorProfile') }}}">
                 <div class="box">
                     <i class="fas fa-user" style="background: #cce9e4; color: #009379;"></i>
                     <h3>Личные данные</h3>
@@ -60,7 +60,7 @@
                 </div>
             </a>
 
-            <a href="">
+            <a href="{{ route('doctor.contact') }}">
                 <div class="box">
                     <i class="fas fa-phone" style="background: #fef7e5; color: #009379;"></i>
                     <h3>Поддержка</h3>

@@ -24,18 +24,17 @@
 
 
 
-    <section class="new" id="new">
-        <div class="container">
-            <div class="news" style="min-height: 20rem;">
-                <h2 class="sub-title">Новости LiveMedKZ !</h2>
-                <div class="news-text">Будьте в курсе новостей с LiveMedKZ</div>
-                <button class="btn" type="button" style="max-width: 250px;">Начать -></button>
-                <div class="circ"></div>
-                <div class="circ2"></div>
-            </div>
+<section class="new" id="new">
+    <div class="container">
+        <div class="news" style="min-height: 20rem;">
+            <h2 class="sub-title">Новости LiveMedKZ !</h2>
+            <div class="news-text">Будьте в курсе новостей с LiveMedKZ</div>
+            <button class="button" type="button" id="price-action" style="max-width: 250px;">Начать -></button>
+            <div class="circ"></div>
+            <div class="circ2"></div>
         </div>
-    </section>
-
+    </div>
+</section>
 
 @endsection
 

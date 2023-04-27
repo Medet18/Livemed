@@ -1,53 +1,56 @@
 @extends('doctorINT.doctorLayout')
 
 @section('content')
-<section class="recept-title">
+<section class="receipt-title7">
     <div class="container">
-        <div class="title">
+        <div class="title7">
             <i class="fa fa-bell"></i>
-            <a href="#"><h2>All notifications</h2></a></div>
+            <a href="#">
+                <h3>All notifications</h3>
+            </a>
+        </div>
     </div>
 </section>
 
-<section class="recepts">
+<section class="receipts">
     <div class="container">
-        <div class="recepts-lists">
+        <div class="receipts-lists">
             <div class="left">
-                <h2><a href="user_profile.htm">Mike Piterson</a></h2>
-                <h4><span>19</span> years old</h4>
+                <h3><a href="{{ route('getUserProfile') }}">Mike Piterson</a></h3>
+                <h5><span>19</span> years old</h5>
             </div>
             <div class="right">
-                <h2>11:00:00</h2>
+                <h3>11:00:00</h3>
             </div>
         </div>
 
-        <div class="recepts-lists">
+        <div class="receipts-lists">
             <div class="left">
-                <h2><a href="user_profile.htm">Harry Potter</a></h2>
-                <h4><span>18</span> years old</h4>
+                <h3><a href="#">Harry Potter</a></h3>
+                <h5><span>18</span> years old</h5>
             </div>
             <div class="right">
-                <h2>10:00:00</h2>
+                <h3>10:00:00</h3>
             </div>
         </div>
 
-        <div class="recepts-lists">
+        <div class="receipts-lists">
             <div class="left">
-                <h2><a href="user_profile.htm">Germiona Greinger</a></h2>
-                <h4><span>24</span> years old</h4>
+                <h3><a href="#">Germiona Greinger</a></h3>
+                <h5><span>24</span> years old</h5>
             </div>
             <div class="right">
-                <h2>09:00:00</h2>
+                <h3>09:00:00</h3>
             </div>
         </div>
 
-        <div class="recepts-lists">
+        <div class="receipts-lists">
             <div class="left">
-                <h2><a href="user_profile.htm">Peter Parker</a></h2>
-                <h4><span>14</span> years old</h4>
+                <h3><a href="#">Peter Parker</a></h3>
+                <h5><span>14</span> years old</h5>
             </div>
             <div class="right">
-                <h2>12:00:00</h2>
+                <h3>12:00:00</h3>
             </div>
         </div>
 
