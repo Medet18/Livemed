@@ -11,20 +11,23 @@ use Illuminate\Support\Facades\DB;
 class AppointmentController extends Controller
 {
 
-    public function  getAppointments(): \Illuminate\Http\JsonResponse
+    public function  getAppointments()
     {
-        $ap = Appointment::select(
-            'id',
-            'appointment_reason',
-            'appointment_date',
-            'hospital_name',
-            'doctor_specialist',
-            'appointment_number',
-            'appointment_user_id' )->where('appointment_user_id',  auth('user-api')->user()->id)->get();
+//        $ap = Appointment::select(
+//            'id',
+//            'appointment_reason',
+//            'appointment_date',
+//            'hospital_name',
+//            'doctor_specialist',
+//            'appointment_number',
+//            'appointment_user_id' )->where('appointment_user_id',  auth('user-api')->user()->id)->get();
 
-        return response()->json(["Appointments"=>$ap],200);
+        return view('client.appointment');
     }
-    public function store(Request $request): \Illuminate\Http\JsonResponse
+    public function getAppointmentTime(){
+        return view('client.appoTime');
+    }
+    public function store(Request $request)
     {
         $did = DB::table('doctors')->where('doctor_specialist', $request->doctor_specialist)->first();
         try{
@@ -49,7 +52,7 @@ class AppointmentController extends Controller
         }
     }
 
-    public function update(Request $request, $id): \Illuminate\Http\JsonResponse
+    public function update(Request $request, $id)
     {
         $did = DB::table('doctors')->where('doctor_specialist', $request->doctor_specialist)->first();
 
@@ -83,7 +86,7 @@ class AppointmentController extends Controller
         }
     }
 
-    public function destroy($lang, $id): \Illuminate\Http\JsonResponse
+    public function destroy($lang, $id)
     {
         $news = Appointment::find($id);
         if(!$news){

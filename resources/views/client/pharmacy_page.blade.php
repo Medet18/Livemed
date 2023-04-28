@@ -1,18 +1,18 @@
 @extends('client.testlayout')
 
 @section('content')
-<section class="recept-title">
+<section class="receipt-title">
     <div class="container">
-        <div class="title">
+        <div class="title4">
             <i class="fas fa-globe-americas"></i>
-            <a href="{{asset('pharmacies.blade.php')}}"><h2>A list of pharmacy </h2></a>
+            <a href="{{ route('getPharmacies') }}"><h3>A list of pharmacy </h3></a>
         </div>
     </div>
 </section>
 
-<section class="recepts">
+<section class="receipts">
     <div class="container">
-        <div class="back_fone">
+        <div class="back_fone2">
             <div class="pharm_title">
                 <h1>The pharmacy <span>№4</span></h1>
                 <a href="#">Qazaqstan Almaty,region of Almalinsk,  Ayezova 101<i class="fas fa-map-marker-alt"></i></a>

@@ -3,7 +3,9 @@
 use App\Http\Controllers\DoctorFolder\DoctorAuthController;
 use App\Http\Controllers\DoctorFolder\ReceiptController;
 use App\Http\Controllers\DoctorFolder\SearchPatientController;
+use App\Http\Controllers\UserFolder\AppointmentController;
 use App\Http\Controllers\UserFolder\AuthController;
+use App\Http\Controllers\UserFolder\MainPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,15 +31,41 @@ Route::group(['prefix' => 'user'], function ($router) {
 });
 
 Route::group(['middleware' => ['auth:web'], 'prefix' => 'user'], function ($router) {
-    Route::get('mainpage', [AuthController::class, 'mainpage']);
+    Route::get('mainpage', [AuthController::class, 'mainpage'])->name('home');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-   // Route::get('/profile', [AuthController::class, 'userProfile'])->name('userProfile');
+    Route::get('profile', [AuthController::class, 'userProfile'])->name('userProfile');
+    Route::get('contact', [AuthController::class, 'contact'])->name('contact');
+
+    Route::get('getReceipts', [MainPageController::class,'getReceipts'])->name('getUserReceipts');
+    Route::get('getReceiptPage', [MainPageController::class,'getReceiptPage'])->name('getUserReceiptPage');
+
+
+    Route::get('getHospitals', [MainPageController::class,'getHospitals'])->name('getHospitals');
+    Route::get('getHospitalPage', [MainPageController::class,'getHospitalPage'])->name('getHospitalPage');
+
+    Route::get('getMedicines', [MainPageController::class,'getMedicines'])->name('getMedicines');
+    Route::get('getMedicinePage', [MainPageController::class,'getMedicinePage'])->name('getMedicinePage');
+
+    Route::get('getPharmacies', [MainPageController::class,'getPharmacies'])->name('getPharmacies');
+    Route::get('getPharmacyPage', [MainPageController::class,'getPharmacyPage'])->name('getPharmacyPage');
+
+    Route::get('getAppointments', [AppointmentController::class,'getAppointments'])->name('getAppointments');
+    Route::get('getAppointmentTime', [AppointmentController::class,'getAppointmentTime'])->name('getAppointmentTime');
+
+    Route::group(['prefix' => 'edit'], function (){
+
+    });
 });
+
+
 
 /////////////////////Doctor
 Route::group(['prefix' => 'doctor'], function ($router) {
     Route::get('login', [DoctorAuthController::class, 'index'])->name('doctor.login');
     Route::post('postLogin', [DoctorAuthController::class, 'postLoginDoctor'])->name('login.post.doctor');
+    Route::get('registration', [DoctorAuthController::class, 'registration'])->name('doctor.register');
+    Route::post('post-registration', [DoctorAuthController::class, 'postRegistration'])->name('register.post.doctor');
+
 });
 
 Route::group(['middleware' => ['auth:doctor'], 'prefix' => 'doctor'], function ($router) {

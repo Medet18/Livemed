@@ -79,14 +79,22 @@ class AuthController extends Controller
     public function logout() {
         Session::flush();
         Auth::logout();
-//        auth('user-api')->logout();
 
         return Redirect('user/login');
     }
 
     public function userProfile(){
-        Auth::user();
+        $user_info = Auth::user();
+        $name = $user_info->full_name;
+        $IIN = $user_info->IIN;
+        $date_of_birth = $user_info->date_of_birth;
+        $email = $user_info->email;
+        $phone_number = $user_info->user_phone;
 
+        return view('client.profile',['name' => $name, 'IIN' => $IIN, 'date_of_birth' => $date_of_birth, 'email' =>$email, 'user_phone' => $phone_number]);
+    }
+    public function contact(){
+        return view('client.contact');
     }
 
 }

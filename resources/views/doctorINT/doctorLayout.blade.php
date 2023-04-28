@@ -104,13 +104,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('doctor.login') }}">Login</a>
                         </li>
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link" href="{{ route('register') }}">Register</a>--}}
-{{--                        </li>--}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('doctor.register') }}">Register</a>
+                        </li>
                     @else
                         <li class="nav-item" style="display: flex">
                             @if(Auth::check())
-                                <a class="nav-link" href="">{{ Auth::user()->doctor_name }}</a>
+                                <a class="nav-link" href="{{ route('doctorProfile') }}">{{ Auth::user()->doctor_name }}</a>
                             @endif
                             <a class="nav-link" href="{{ route('doctor.logout') }}">Logout</a>
                         </li>

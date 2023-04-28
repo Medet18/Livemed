@@ -24,7 +24,7 @@
             <!---Doctor 1---->
             <div class="doctor">
                 <div class="image">
-                    <img src="../../../public/photo/user.png" alt="user">
+                    <img src="{{ asset('photo/user.png') }}" alt="user">
                     <div class="image2">
                         <h1><a href="#"> Vladimir Putin </a></h1>
                         <h3>Dentist</h3>
@@ -46,7 +46,7 @@
             <!---Doctor 2---->
             <div class="doctor">
                 <div class="image">
-                    <img src="../../../public/photo/user.png" alt="user">
+                    <img src="{{ asset('photo/user.png') }}" alt="user">
                     <div class="image2">
                         <h1><a href="#"> Vladimir Putin </a></h1>
                         <h3>Dentist</h3>
@@ -67,7 +67,7 @@
                 <!---Doctor 3---->
             <div class="doctor">
                 <div class="image">
-                    <img src="../../../public/photo/user.png" alt="user">
+                    <img src="{{ asset('photo/user.png') }}" alt="user">
                     <div class="image2">
                         <h1><a href="#"> Vladimir Putin </a></h1>
                         <h3>Dentist</h3>

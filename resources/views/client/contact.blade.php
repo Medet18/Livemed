@@ -1,11 +1,11 @@
 @extends('client.testlayout')
 
 @section('content')
-<section class="recept-title">
+<section class="receipt-title3">
     <div class="container">
-        <div class="title">
+        <div class="title7">
             <i class="fas fa-phone"></i>
-            <a href="{{asset('contact.blade.php')}}"><h2>The tech support </h2></a>
+            <a href="#"><h3>The tech support </h3></a>
         </div>
         <div class="sup">
             <i class="fas fa-comments" style="font-size: 100px"></i>
@@ -13,11 +13,11 @@
     </div>
 </section>
 
-<section class="recepts">
+<section class="receipts">
     <div class="container">
-        <div class="back_fone">
-            <div class="pharm_title">
-                <form action="#" class="price-form" >
+        <div class="back_fone3">
+            <div class="pharm_title3">
+                <form action="#" class="price-form3" >
                     <input type="text" placeholder="Your Email" class="price-input">
                     <textarea name="sms" id="" cols="30" rows="10" placeholder="Your message"></textarea>
                     <button class="button">Send</button>

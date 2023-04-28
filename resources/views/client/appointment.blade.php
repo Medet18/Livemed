@@ -8,25 +8,25 @@
             <h1>The list of specialization</h1>
         </div>
 
-        <div class="client">
+        <div class="client1">
             <div class="spec">
                 <div class="spec_name">
-                    <a href="appoTime.htm">Surgeon</a>
+                    <a href="{{ route('getAppointmentTime') }}">Surgeon</a>
                 </div>
                 <div class="spec_name">
-                    <a href="#">Dentist</a>
+                    <a href="{{ route('getAppointmentTime') }}">Dentist</a>
                 </div>
                 <div class="spec_name">
-                    <a href="#">Therapist</a>
+                    <a href="{{ route('getAppointmentTime') }}">Therapist</a>
                 </div>
                 <div class="spec_name">
-                    <a href="#">Traumatology</a>
+                    <a href="{{ route('getAppointmentTime') }}">Traumatology</a>
                 </div>
                 <div class="spec_name">
-                    <a href="#">Mammalogist </a>
+                    <a href="{{ route('getAppointmentTime') }}">Mammalogist </a>
                 </div>
                 <div class="spec_name">
-                    <a href="#">Cosmetologist</a>
+                    <a href="{{ route('getAppointmentTime') }}">Cosmetologist</a>
                 </div>
             </div>
 

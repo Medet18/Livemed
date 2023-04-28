@@ -2,49 +2,49 @@
 
 @section('content')
 
-<section class="recept-title">
+<section class="receipt-title">
     <div class="container">
-        <div class="title">
+        <div class="title5">
             <i class="fas fa-shopping-bag"></i>
-            <a href="{{asset('medicines.htm')}}"><h2>A list of medicines</h2></a></div>
+            <a href="#"><h3>A list of medicines</h3></a></div>
     </div>
 </section>
 
-<section class="recepts">
+<section class="receipts3">
     <div class="container">
-        <div class="recepts-lists">
+        <div class="receipts-lists2">
             <div class="left">
-                <h2>The name of medicine</h2>
+                <a href="{{ route('getMedicinePage') }}"><h4>The name of medicine</h4></a>
             </div>
             <div class="right">
-                <h2>Without recept</h2>
+                <h4>Without recept</h4>
             </div>
         </div>
 
-        <div class="recepts-lists">
+        <div class="receipts-lists2">
             <div class="left">
-                <h2>The name of medicine</h2>
+                <a href="#"><h4>The name of medicine</h4></a>
             </div>
             <div class="right">
-                <h2>With recept</h2>
+                <h4>Without recept</h4>
             </div>
         </div>
 
-        <div class="recepts-lists">
+        <div class="receipts-lists2">
             <div class="left">
-                <h2>The name of medicine</h2>
+                <a href="#"><h4>The name of medicine</h4></a>
             </div>
             <div class="right">
-                <h2>Without recept</h2>
+                <h4>Without recept</h4>
             </div>
         </div>
 
-        <div class="recepts-lists">
+        <div class="receipts-lists2">
             <div class="left">
-                <h2>The name of medicine</h2>
+                <a href="#"><h4>The name of medicine</h4></a>
             </div>
             <div class="right">
-                <h2>With recept</h2>
+                <h4>Without recept</h4>
             </div>
         </div>
 

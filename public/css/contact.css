@@ -1,19 +1,19 @@
-.recept-title .container{
+.receipt-title3 .container{
     padding: 5px;
     /*display: flex;*/
     /*align-items: center;*/
 }
-.recept-title .container .sup{
+.receipt-title3 .container .sup{
     display: flex;
     justify-content: center;
     margin: 50px;
 }
 
-.title{
+.title7{
     display: flex;
     align-items: center;
     margin: 15px 0;
-    padding: 25px;
+    padding: 12px 25px;
     border: 1px solid #E5E5E5;
     width: 350px;
     border-radius: 20px;
@@ -21,25 +21,25 @@
     background: #ffffff;
 
 }
-.title a{
+.title7 a{
     text-decoration: none;
 }
-.title:hover h2 {
+.title7:hover h3 {
     color: #75c2b5;
 }
 
-.recept-title h2{
+.receipt-title3 h3{
     margin-left: 25px;
     color: #130f40;
 }
-.recept-title i {
+.receipt-title3 i {
     font-size: 25px;
     color: #75c2b5;
 }
 
 
 
-.recepts .container{
+.receipts .container{
     /*padding: 5px;*/
     min-height: 600px;
     border-radius: 20px;
@@ -48,19 +48,19 @@
     background: #e5f4f2;
 }
 
-.back_fone{
+.back_fone3{
     display: flex;
     justify-content: space-around;
 }
 
-.price-form{
+.price-form3{
     max-width: 344px;
     padding:40px;
 
 }
 .price-input{
     padding: 22px 18px;
-    width: 586px;
+    width: 555px;
     height: 65px;
     background: #FFFFFF;
     border: 1px solid #5D5D5F;
@@ -75,7 +75,7 @@
 .price-input::placeholder{
     color: #5D5D5F;
 }
-.pharm_title textarea{
+.pharm_title3 textarea{
     border: 1px solid #5D5D5F;
     border-radius: 15px;
     width: 555px;
@@ -85,7 +85,7 @@
     font-size: 16px;
     padding: 15px;
 }
-.pharm_title .button{
+.pharm_title3 .button{
     margin-left: 110px;
 }
 .contact h1{

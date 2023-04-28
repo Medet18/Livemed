@@ -11,7 +11,7 @@
                     we advise you to get acquainted with our website closer
                 </div>
                 <div class="main-action">
-                    <button class="button" id="main-action">Получить appointment</button>
+                    <a href="{{ route('getAppointments') }}"><button class="button" id="main-action">Получить appointment</button></a>
                 </div>
 
             </div>
@@ -25,7 +25,7 @@
 
             <div class="box-container">
 
-                <a href="{{asset('client/recepts.blade.php')}}">
+                <a href="{{ route('getUserReceipts') }}">
                     <div class="box">
                         <i class="fas fa-scroll" style="background: #ffe0dc; color: #009379;"></i>
                         <h3>Мои рецепты</h3>
@@ -33,7 +33,7 @@
                     </div>
                 </a>
 
-                <a href="{{asset('client/purchase.blade.php')}}">
+                <a href="{{ route('getHospitals') }}">
                     <div class="box">
                         <i class="fas fa-align-center" style="background: #cce9e4; color: #009379;"></i>
                         <h3>Список поликлиник</h3>
@@ -41,7 +41,7 @@
                     </div>
                 </a>
 
-                <a href="{{asset('client/medicines.blade.php')}}}">
+                <a href="{{ route('getMedicines') }}">
                     <div class="box">
                         <i class="fas fa-shopping-bag" style="background: #fef7e5; color: #009379;"></i>
 
@@ -50,7 +50,7 @@
                     </div>
                 </a>
 
-                <a href="{{asset('client/pharmacies.blade.php')}}}">
+                <a href="{{ route('getPharmacies') }}">
                     <div class="box">
                         <i class="fas fa-globe-americas" style="background: #ffe0dc; color: #009379;"></i>
                         <h3>Список аптек</h3>
@@ -58,7 +58,7 @@
                     </div>
                 </a>
 
-                <a href="{{asset('client/profile.blade.php')}}">
+                <a href="{{ route('userProfile') }}">
                     <div class="box">
                         <i class="fas fa-user" style="background: #cce9e4; color: #009379;"></i>
                         <h3>Личные данные</h3>
@@ -66,7 +66,7 @@
                     </div>
                 </a>
 
-                <a href="{{asset('client/contact.blade.php')}}}">
+                <a href="{{ route('contact') }}">
                     <div class="box">
                         <i class="fas fa-phone" style="background: #fef7e5; color: #009379;"></i>
                         <h3>Поддержка</h3>

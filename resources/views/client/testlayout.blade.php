@@ -7,19 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
+
     <link rel="stylesheet" href="{{asset('css/login.css')}}">
     <link rel="stylesheet" href="{{asset('css/register.css')}}">
-    <link rel="stylesheet" href="{{asset('css/appointment.css')}}">
-    <link rel="stylesheet" href="{{asset('css/appoTime.css')}}">
-    <link rel="stylesheet" href="{{asset('css/contact.css')}}">
-    <link rel="stylesheet" href="{{asset('css/hospital_page.css')}}">
-    <link rel="stylesheet" href="{{asset('css/hospitals.css')}}">
-    <link rel="stylesheet" href="{{asset('css/medicines.css')}}">
-    <link rel="stylesheet" href="{{asset('css/pharmacies.css')}}">
-    <link rel="stylesheet" href="{{asset('css/pharmacy_page.css')}}">
-    <link rel="stylesheet" href="{{asset('css/profile.css')}}">
+
     <link rel="stylesheet" href="{{asset('css/recepts.css')}}">
     <link rel="stylesheet" href="{{asset('css/recept_page.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/hospitals.css')}}">
+    <link rel="stylesheet" href="{{asset('css/hospital_page.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/medicines.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/pharmacies.css')}}">
+    <link rel="stylesheet" href="{{asset('css/pharmacy_page.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/profile.css')}}">
+    <link rel="stylesheet" href="{{asset('css/contact.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/appointment.css')}}">
+    <link rel="stylesheet" href="{{asset('css/appoTime.css')}}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -93,7 +100,7 @@
     <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
         <div class="container">
             <div class="logo">
-                <a class="logo" id="logo"href="#"><span>Live</span>MedKZ</a>
+                <a class="logo" id="logo"href="{{ route('home') }}"><span>Live</span>MedKZ</a>
             </div>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -108,7 +115,7 @@
                     @else
                         <li class="nav-item" style="display: flex">
                             @if(Auth::check())
-                                <a class="nav-link" href="">{{ Auth::user()->full_name }}</a>
+                                <a class="nav-link" href="{{ route('userProfile') }}">{{ Auth::user()->full_name }}</a>
                             @endif
                             <a class="nav-link" href="{{ route('logout') }}">Logout</a>
                         </li>
