@@ -71,13 +71,19 @@ Route::group(['prefix' => 'doctor'], function ($router) {
 Route::group(['middleware' => ['auth:doctor'], 'prefix' => 'doctor'], function ($router) {
     Route::get('mainPage', [DoctorAuthController::class, 'mainPage'])->name('mainPage');
     Route::get('logout', [DoctorAuthController::class, 'logout'])->name('doctor.logout');
+
     Route::get('profile', [DoctorAuthController::class, 'doctorProfile'])->name('doctorProfile');
+
     Route::get('contact', [DoctorAuthController::class, 'contact'])->name('doctor.contact');
+
     Route::get('getReceipts', [ReceiptController::class, 'getReceipts'])->name('getReceipts');
     Route::get('getReceiptPage', [ReceiptController::class, 'getReceiptPage'])->name('getReceiptPage');
+
     Route::get('getNotifications', [ReceiptController::class, 'getNotifications'])->name('getNotifications');
+
     Route::get('getUserProfile', [ReceiptController::class, 'getUserProfile'])->name('getUserProfile');
 
+    Route::get('getQR', [ReceiptController::class,'qrCode'])->name('qrCode');
 
     Route::group(['prefix' => 'edit'], function ($router) {
         Route::get('/index', [SearchPatientController::class,'index'])->name('doctor.index');

@@ -48,7 +48,7 @@
 <section class="submit">
     <div class="container">
         <div class="bt">
-            <button class="button">Submit</button>
+            <button class="button" onclick="window.location.href='{{ route('qrCode') }}'">Submit</button>
         </div>
     </div>
 </section>

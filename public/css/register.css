@@ -23,30 +23,30 @@
 }
 
 
-.price{
+.price1{
     overflow: hidden;/*Это помагает когда если картинка больше , тогда картинка обрезалось*/
     margin: 100px 0;
 }
-.price .container{
+.price1 .reg{
     position: relative;
     background: #e5f4f2;
     border-radius: 25px;
-    width: 1200px;
+    /*width: 1200px;*/
     /*display: flex;*/
     /*justify-content: center;*/
 }
 
-.price .sub-title{
-    text-align: center;
-    margin: 25px;
+.price1 .sub-title{
+    /*text-align: center;*/
+    /*margin: 10px;*/
     color: #130f40;
 }
-.price-form{
+.price-form1{
     max-width: 344px;
     padding:40px 210px;
 
 }
-.price-input{
+.price-input1{
     padding: 22px 18px;
     width: 344px;
     height: 65px;
@@ -60,14 +60,14 @@
     outline: none;
     margin-bottom: 15px;
 }
-.price-input::placeholder{
+.price-input1::placeholder{
     color: #5D5D5F;
 }
 
-.price .button{
+.price1 .button{
     width: 100%;
 }
-.price-image{
+.price-image1{
     position: absolute;
     bottom: 130px;
     left: 720px;

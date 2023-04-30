@@ -26,18 +26,18 @@
                 <div class="image">
                     <img src="{{ asset('photo/user.png') }}" alt="user">
                     <div class="image2">
-                        <h1><a href="#"> Vladimir Putin </a></h1>
-                        <h3>Dentist</h3>
-                        <h4><span>39</span> year work experience</h4>
+                        <h3><a href="#"> Vladimir Putin </a></h3>
+                        <h5>Dentist</h5>
+                        <p><span>39</span> year work experience</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             ostrum obcaecati<br> perferendis quis quos reiciendis repellendus
                             voluptas  voluptate.</p>
                     </div>
                     <div class="image3">
-                        <h2><i class="fas fa-calendar" style=" color: #009379; margin-right: 10px"></i> 09:00:00</h2>
-                        <h2><i class="fas fa-phone" style=" color: #009379; margin-right: 10px"></i> 87079856789</h2>
-                        <h2><i class="fas fa-map-marker-alt" style=" color: #009379; margin-right: 10px"></i> Almaty Bostandyk region, 43</h2>
-                        <h2><i class="fas fa-hospital" style=" color: #009379; margin-right: 10px"></i> Astana Vision </h2>
+                        <h5><i class="fas fa-calendar" style=" color: #009379; margin-right: 10px"></i> 09:00:00</h5>
+                        <h5><i class="fas fa-phone" style=" color: #009379; margin-right: 10px"></i> 87079856789</h5>
+                        <h5><i class="fas fa-map-marker-alt" style=" color: #009379; margin-right: 10px"></i> Almaty Bostandyk region, 43</h5>
+                        <h5><i class="fas fa-hospital" style=" color: #009379; margin-right: 10px"></i> Astana Vision </h5>
                         <button class="btn" type="button">record</button>
                     </div>
                 </div>
@@ -48,18 +48,18 @@
                 <div class="image">
                     <img src="{{ asset('photo/user.png') }}" alt="user">
                     <div class="image2">
-                        <h1><a href="#"> Vladimir Putin </a></h1>
-                        <h3>Dentist</h3>
-                        <h4><span>39</span> year work experience</h4>
+                        <h3><a href="#"> Vladimir Putin </a></h3>
+                        <h5>Dentist</h5>
+                        <p><span>39</span> year work experience</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             ostrum obcaecati<br> perferendis quis quos reiciendis repellendus
                             voluptas  voluptate.</p>
                     </div>
                     <div class="image3">
-                        <h2><i class="fas fa-calendar" style=" color: #009379; margin-right: 10px"></i> 09:00:00</h2>
-                        <h2><i class="fas fa-phone" style=" color: #009379; margin-right: 10px"></i> 87079856789</h2>
-                        <h2><i class="fas fa-map-marker-alt" style=" color: #009379; margin-right: 10px"></i> Almaty Bostandyk region, 43</h2>
-                        <h2><i class="fas fa-hospital" style=" color: #009379; margin-right: 10px"></i> Astana Vision </h2>
+                        <h5><i class="fas fa-calendar" style=" color: #009379; margin-right: 10px"></i> 09:00:00</h5>
+                        <h5><i class="fas fa-phone" style=" color: #009379; margin-right: 10px"></i> 87079856789</h5>
+                        <h5><i class="fas fa-map-marker-alt" style=" color: #009379; margin-right: 10px"></i> Almaty Bostandyk region, 43</h5>
+                        <h5><i class="fas fa-hospital" style=" color: #009379; margin-right: 10px"></i> Astana Vision </h5>
                         <button class="btn" type="button">record</button>
                     </div>
                 </div>
@@ -69,18 +69,18 @@
                 <div class="image">
                     <img src="{{ asset('photo/user.png') }}" alt="user">
                     <div class="image2">
-                        <h1><a href="#"> Vladimir Putin </a></h1>
-                        <h3>Dentist</h3>
-                        <h4><span>39</span> year work experience</h4>
+                        <h3><a href="#"> Vladimir Putin </a></h3>
+                        <h5>Dentist</h5>
+                        <p><span>39</span> year work experience</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             ostrum obcaecati<br> perferendis quis quos reiciendis repellendus
                             voluptas  voluptate.</p>
                     </div>
                     <div class="image3">
-                        <h2><i class="fas fa-calendar" style=" color: #009379; margin-right: 10px"></i> 09:00:00</h2>
-                        <h2><i class="fas fa-phone" style=" color: #009379; margin-right: 10px"></i> 87079856789</h2>
-                        <h2><i class="fas fa-map-marker-alt" style=" color: #009379; margin-right: 10px"></i> Almaty Bostandyk region, 43</h2>
-                        <h2><i class="fas fa-hospital" style=" color: #009379; margin-right: 10px"></i> Astana Vision </h2>
+                        <h5><i class="fas fa-calendar" style=" color: #009379; margin-right: 10px"></i> 09:00:00</h5>
+                        <h5><i class="fas fa-phone" style=" color: #009379; margin-right: 10px"></i> 87079856789</h5>
+                        <h5><i class="fas fa-map-marker-alt" style=" color: #009379; margin-right: 10px"></i> Almaty Bostandyk region, 43</h5>
+                        <h5><i class="fas fa-hospital" style=" color: #009379; margin-right: 10px"></i> Astana Vision </h5>
                         <button class="btn" type="button">record</button>
                     </div>
                 </div>

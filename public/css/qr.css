@@ -1,0 +1,87 @@
+.receipt-title_qr  .container{
+    padding: 5px;
+    display: flex;
+    /*justify-content: center;*/
+}
+
+.title_qr{
+    margin: 15px 15px 15px 0;
+    padding: 8px 20px;
+    border: 1px solid #E5E5E5;
+    width: 260px;
+    border-radius: 20px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    background: #ffffff;
+    /*cursor: pointer;*/
+}
+
+.receipt-title_qr h4{
+    margin-left: 25px;
+    color: #130f40;
+}
+.receipt-title_qr i {
+    font-size: 25px;
+    color: #75c2b5;
+}
+
+
+#hv_qr:hover h4{
+    color: #75c2b5;
+}
+
+.title_qr a{
+    text-decoration: none;
+}
+
+.receipts_qr .container{
+    /*padding: 5px;*/
+    min-height: 1000px;
+    border-radius: 20px;
+    border: 1px solid #E5E5E5;
+    margin-bottom: 40px;
+    background: #ffffff;
+}
+.receipts_qr .doctor2{
+    margin: 25px 25px 25px auto;
+    padding: 15px 25px;
+    width: 280px;
+    background: #009379;
+    border-radius: 20px;
+    color: #E5E5E5;
+}
+.back_fone_qr{
+    min-height: 820px;
+    background: #dba2ea;
+    /*cc92dc*/
+}
+.back_fone_qr h2{
+    margin-left: 25px;
+    padding: 65px 25px 0;
+    color: #130f40;
+}
+.receipts-lists-qr{
+    margin: 25px 0;
+    padding: 45px;
+}
+
+.receipts_qr h3{
+    margin: 15px;
+    color: #130f40;
+    font-size: 23px;
+}
+.receipts_qr .left {
+    display: flex;
+    /*align-items: center;*/
+    justify-content: space-between;
+    border-bottom: 3px solid #130f40;
+    padding: 15px;
+}
+.pharm_qr{
+    margin-top: 70px;
+    float: right;
+}
+.pharm_qr img{
+    width: 270px;
+    height: 270px;
+    /*margin: 25px;*/
+}

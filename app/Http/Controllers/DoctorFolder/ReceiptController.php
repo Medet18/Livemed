@@ -41,6 +41,10 @@ class ReceiptController extends Controller
         return view('doctorINT.medicinesDoctor');
     }
 
+    public function qrCode(){
+        return view('doctorINT.qr');
+    }
+
     public function index(Request $request){
         $id = $request->employee_id;
         $name = $request->full_name;

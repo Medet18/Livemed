@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{asset('css/receiptsDoctor.css')}}">
     <link rel="stylesheet" href="{{asset('css/receipt_pageDoctor.css')}}">
 
+    <link rel="stylesheet" href="{{asset('css/qr.css')}}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 {{--    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">--}}
